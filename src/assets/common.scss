@@ -1,0 +1,82 @@
+$red: #F56C6C;
+$feiliks: #D03030;
+$blue: #409EFF;
+$green: #67C23A;
+$yellow: #E6A23C;
+$grey: #909399;
+$white: #FAFAFA;
+$main-color: #303133;
+$general-color: #606266;
+$sub-color: $grey;
+$placeholder-color: #C0C4CC;
+$level1border: #DCDFE6;
+$level2border: #E4E7ED;
+$level3border: #EBEEF5;
+$level4border: #F2F6FC;
+$family: 'Microsoft YaHei';
+$minisize: 12px;
+$size: 14px;
+$bar-height: 44px;
+$span-height: 30px;
+$li-height: 40px;
+$input-height: 60px;
+
+body {
+    font-family: $family;
+}
+
+.db {
+    display: block;
+}
+
+.dn {
+    display: none;
+}
+
+.rel {
+    position: relative;
+}
+
+.abs {
+    position: absolute;
+}
+
+@mixin flexes($direction:row, $justifyContent:center, $alignItems:center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+}
+
+@mixin borders($top: 100%, $backgroundColor: $placeholder-color) {
+    @extend .rel;
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: -50%;
+        top: $top;
+        width: 200%;
+        height: 1px;
+        background: $backgroundColor;
+        transform: scale(0.5);
+    }
+}
+
+.miniborder {
+    @include borders();
+}
+
+
+input::-webkit-input-placeholder {
+    color: $placeholder-color;
+    opacity: 1;
+}
+
+li, p {
+    line-height: $li-height;
+}
+
+.el-card {
+    width: 360px;
+}
