@@ -37,6 +37,9 @@ export default {
 	#wrap-nav {
 		width: 100%;
 		background: $red;
+		position: fixed;
+		top: 0;
+		z-index: 100;
 		nav {
 			width: 1600px;
 			margin: 0 auto;

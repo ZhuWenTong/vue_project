@@ -73,6 +73,21 @@
 			<div class="city">
 				<City></City>
 			</div>
+			<el-card>
+				<div slot='header'>
+					<span>获取store中countries数据(点击删除)</span>
+				</div>
+				<div>
+					<ul>
+						<li v-for='country in countries' :key='country.id' >
+							<el-button type='danger' @click='delCountry(country.id)'>{{country.name}}</el-button>
+						</li>
+					</ul>
+				</div>
+			</el-card>
+			<div class="country">
+				<Country></Country>
+			</div>
 		</div>
 	</div>
 </template>
@@ -82,8 +97,9 @@
 	import Animals from './demos/animals.vue';
 	import Cars from './demos/cars.vue';
 	import City from './demos/city.vue';
+	import Country from './demos/country.vue';
 
-	import {mapState} from 'vuex';
+	import {mapState, mapActions} from 'vuex';
 
 	export default {
 		data() {
@@ -92,12 +108,17 @@
 			}
 		},
 		methods: {
+			...mapActions(['COUNTRIES']),
 			countMin() {
 				if(this.$store.state.count == 0) {
 					return;
 				}
 				//this.$store.commit('MIN_COUNT', 1);
 				this.$store.dispatch('MIN_COUNT', 1);
+			},
+			delCountry(id) {
+				//console.log(id);
+				this.COUNTRIES({id, type:'del'});
 			}
 		},
 		// computed: {
@@ -129,7 +150,7 @@
 		// }),
 		//computed属性名称与state子节点名称相同 可以传字符串数组
 		computed: {
-			...mapState(['userInfo', 'animals']),
+			...mapState(['userInfo', 'animals', 'countries']),
 			getCount() {
 				return this.$store.state.count;
 			},
@@ -145,7 +166,8 @@
 			Info,
 			Animals,
 			Cars,
-			City
+			City,
+			Country
 		}
 	}
 </script>
@@ -153,6 +175,7 @@
 	@import '../../assets/common.scss';
 	#wrap-store {
 		width: 100%;
+		margin-top: 40px;
 		.vuex, .store {
 			width: 1600px;
 			margin: 0 auto;

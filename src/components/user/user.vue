@@ -168,6 +168,7 @@
     @import '../../assets/common';
     #wrap-user {
         width: 100%;
+        margin-top: 40px;
         .user {
             width: 1600px;
             margin: 0 auto;

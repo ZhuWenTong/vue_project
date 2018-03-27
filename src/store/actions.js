@@ -1,4 +1,4 @@
-import {ADD_COUNT, MIN_COUNT, USER_INFO, CITIES_INFO} from './mutation-types.js';
+import { ADD_COUNT, MIN_COUNT, USER_INFO, CITIES_INFO, COUNTRIES } from './mutation-types.js';
 export default {
 	[ADD_COUNT]: (context, n) => {
 		context.commit(ADD_COUNT, n);
@@ -11,5 +11,8 @@ export default {
 	},
 	[CITIES_INFO]: (context, arr) => {
 		context.commit(CITIES_INFO, arr);
+	},
+	[COUNTRIES]: (context, data) => {
+		context.commit(COUNTRIES, data);
 	}
 }

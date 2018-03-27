@@ -39,6 +39,7 @@
 	@import '../../assets/common';
 	#wrap-news {
 		width: 100%;
+		margin-top: 40px;
 		.news {
 			width: 1600px;
 			margin: 0 auto;

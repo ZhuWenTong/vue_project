@@ -1,4 +1,4 @@
-import {ADD_COUNT, MIN_COUNT, USER_INFO, CARS_INFO, CITIES_INFO} from './mutation-types.js';
+import {ADD_COUNT, MIN_COUNT, USER_INFO, CARS_INFO, CITIES_INFO, COUNTRIES} from './mutation-types.js';
 export default {
 	[ADD_COUNT](state, n) {
 		state.count += n;
@@ -30,5 +30,23 @@ export default {
 				i.num = cityInfo.num;
 			}
 		})
+	},
+	[COUNTRIES](state, data) {
+		console.log(data)
+		//state.countries.push(data);
+		if(data.type == 'add') {
+			if(JSON.stringify(state.countries).indexOf(JSON.stringify(data.add_country)) == -1) {
+				state.countries.push(data.add_country);
+			} else {
+				console.log('不可重复添加')
+			}
+		} else {
+			for(let i = 0; i < state.countries.length; i++) {
+				if(state.countries[i].id == data.id) {
+					state.countries.splice(i, 1);
+					return ;
+				}
+			}
+		}
 	}
 }

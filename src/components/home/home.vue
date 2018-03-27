@@ -112,6 +112,7 @@
     
     #wrap-content {
         width: 100%;
+        margin-top: 40px;
         .content {
             width: 1600px;
             margin:0 auto;

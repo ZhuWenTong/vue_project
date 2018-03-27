@@ -33,5 +33,6 @@ export default {
 	}, {
 		city: 'beijing',
 		num: 300
-	}]
+	}],
+	countries: []
 }

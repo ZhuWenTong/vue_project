@@ -5,3 +5,5 @@ export const USER_INFO = 'USER_INFO';
 export const CARS_INFO = 'CARS_INFO';
 
 export const CITIES_INFO = 'CITIES_INFO';
+
+export const COUNTRIES = 'COUNTRIES';
