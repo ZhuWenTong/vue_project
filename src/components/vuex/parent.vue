@@ -176,6 +176,7 @@
 	#wrap-store {
 		width: 100%;
 		margin-top: 40px;
+		background: $level3border;
 		.vuex, .store {
 			width: 1600px;
 			margin: 0 auto;
@@ -183,10 +184,10 @@
 			flex-wrap: wrap;
 			@include borders();
 			.el-card {
-				margin-right: 30px;
+				margin-right: 15px;
 			}
 			.el-card:nth-of-type(odd) {
-				margin-left: 30px;
+				margin-left: 15px;
 			}
 		}
 	}
