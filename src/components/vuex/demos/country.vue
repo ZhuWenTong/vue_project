@@ -53,7 +53,7 @@
 				} else {
 					this.$notify({
 				        title: '警告',
-				        message: '不可重复添加',
+				        message: `There is only one ${add_country.name} in the world`,
 				        type: 'warning'
 			        });
 				}

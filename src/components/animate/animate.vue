@@ -24,7 +24,6 @@
 	@import '../../assets/common';
 	#wrap-anim {
 		width: 100%;
-		margin-top: 40px;
 		.anim {
 			width: 1600px;
 			margin: 0 auto;

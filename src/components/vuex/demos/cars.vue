@@ -11,9 +11,9 @@
 						<span>{{car.price}}</span>
 					</li>
 				</ul>
+				<!-- <el-button @click='CARS_INFO'>changeInfo</el-button> -->
+				<el-button @click='changeCarsInfo'>changeInfo</el-button>
 			</div>
-			<!-- <el-button @click='CARS_INFO'>changeInfo</el-button> -->
-			<el-button @click='changeCarsInfo'>changeInfo</el-button>
 		</el-card>
 	</div>
 </template>
@@ -47,5 +47,7 @@
 </script>
 <style lang='scss', scoped>
 	@import '../../../assets/common.scss';
-	
+	.miniborder {
+		@include flexes(row, space-between, center);
+	}
 </style>

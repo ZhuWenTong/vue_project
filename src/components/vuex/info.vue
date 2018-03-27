@@ -5,10 +5,12 @@
 				<span>info组件获取store中的userInfo</span>
 			</div>
 			<div class="miniborder">
-				<p>Name: {{userInfo.name}}</p>
-				<p>Age: {{userInfo.age}}</p>
+				<div>
+					<p>Name: {{userInfo.name}}</p>
+					<p>Age: {{userInfo.age}}</p>
+				</div>
+				<el-button @click='changeInfo'>changeInfo</el-button>
 			</div>
-			<el-button @click='changeInfo'>changeInfo</el-button>
 		</el-card>
 	</div>
 </template>
@@ -35,5 +37,7 @@
 </script>
 <style scoped lang="scss">
 	@import '../../assets/common.scss';
-	
+	.miniborder {
+		@include flexes(row, space-between, center);
+	}
 </style>

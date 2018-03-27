@@ -4,15 +4,17 @@
 			<div slot='header'>
 				<span>city组件获取state中的cars (mutations, actions)</span>
 			</div>
-			<ul>
-				<li v-for='city in cityInfo' :key='city.city'>
-					<span>{{city.city}}</span> - 
-					<span>{{city.num}}</span>
-				</li>
-			</ul>
-			<el-button @click='changeCityInfo'>changeInfo</el-button>
-			<!-- <el-button @click='CITIES_INFO'>changeInfo</el-button> -->
-			<!-- <el-button @click='changeCityInfo("shenzhen")'>changeInfo</el-button> -->
+			<div class="miniborder">
+				<ul>
+					<li v-for='city in cityInfo' :key='city.city'>
+						<span>{{city.city}}</span> - 
+						<span>{{city.num}}</span>
+					</li>
+				</ul>
+				<el-button @click='changeCityInfo'>changeInfo</el-button>
+				<!-- <el-button @click='CITIES_INFO'>changeInfo</el-button> -->
+				<!-- <el-button @click='changeCityInfo("shenzhen")'>changeInfo</el-button> -->
+			</div>
 		</el-card>
 	</div>
 </template>
@@ -46,5 +48,8 @@
 	}
 </script>
 <style scoped lang='scss'>
-	
+	@import '../../../assets/common.scss';
+	.miniborder {
+		@include flexes(row, space-between, center);
+	}
 </style>

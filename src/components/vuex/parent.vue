@@ -175,8 +175,7 @@
 	@import '../../assets/common.scss';
 	#wrap-store {
 		width: 100%;
-		margin-top: 40px;
-		background: $level3border;
+		background: url('../../assets/img/bg.jpg');
 		.vuex, .store {
 			width: 1600px;
 			margin: 0 auto;
