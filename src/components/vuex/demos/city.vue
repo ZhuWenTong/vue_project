@@ -11,26 +11,32 @@
 				</li>
 			</ul>
 			<el-button @click='changeCityInfo'>changeInfo</el-button>
+			<!-- <el-button @click='CITIES_INFO'>changeInfo</el-button> -->
+			<!-- <el-button @click='changeCityInfo("shenzhen")'>changeInfo</el-button> -->
 		</el-card>
 	</div>
 </template>
 <script>
+	import {mapActions} from 'vuex';
 	export default {
 		data() {
 			return {
-
+				
 			}
 		},
 		methods: {
+			...mapActions(['CITIES_INFO']),  // 将 `this.CITIES_INFO()` 映射为 `this.$store.dispatch('CITIES_INFO')`
 			changeCityInfo() {
-				this.cityInfo.map((i) => {
-					if(i.city == 'shenzhen') {
-						i.num = 300
-					}
-				})
-				console.log(this.cityInfo)
-				this.$store.dispatch('CITIES_INFO', this.cityInfo);
+				let city = {
+					city: 'shenzhen',
+					num: 500
+				};
+				this.CITIES_INFO(city);
 			}
+			
+			// ...mapActions({
+			// 	changeCityInfo: 'CITIES_INFO' // 将 `this.changeCityInfo()` 映射为 `this.$store.dispatch('CITIES_INFO')`
+			// })
 		},
 		computed: {
 			cityInfo() {

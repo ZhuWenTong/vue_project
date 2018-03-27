@@ -6,17 +6,19 @@
 			</div>
 			<div class="miniborder">
 				<ul>
-					<li v-for='car in carsInfo' :key='car.sign'>
+					<li v-for='car in cars' :key='car.sign'>
 						<span>{{car.sign}}</span> -
 						<span>{{car.price}}</span>
 					</li>
 				</ul>
 			</div>
+			<!-- <el-button @click='CARS_INFO'>changeInfo</el-button> -->
 			<el-button @click='changeCarsInfo'>changeInfo</el-button>
 		</el-card>
 	</div>
 </template>
 <script>
+	import {mapState, mapMutations} from 'vuex';
 	export default {
 		data() {
 			return {
@@ -24,20 +26,22 @@
 			}
 		},
 		methods: {
+			...mapMutations(['CARS_INFO']),
 			changeCarsInfo() {
-				this.carsInfo.map((i) => {
-					if(i.sign == 'BMW') {
-						i.price = '60';
-					}
-				})
-				console.log(this.carsInfo)
-				this.$store.commit('CARS_INFO', this.carsInfo);
+				let carInfo = {
+					sign: 'BMW',
+					price: 60
+				};
+				this.CARS_INFO(carInfo)
+				//this.$store.commit('CARS_INFO', {sign: 'BMW', price: 60});
 			}
+			
 		},
 		computed: {
-			carsInfo() {
-				return this.$store.state.cars;
-			}
+			...mapState(['cars']),
+			// carsInfo() {
+			// 	return this.$store.state.cars;
+			// }
 		}
 	}
 </script>

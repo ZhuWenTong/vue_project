@@ -13,10 +13,22 @@ export default {
 		state.userInfo.name = name;
 		state.userInfo.age = age;
 	},
-	[CARS_INFO](state, arr) {
-		state.cars = arr;
+	[CARS_INFO](state, carInfo) {
+		// state.cars = arr;
+		console.log(carInfo)
+		state.cars.map((i) => {
+			if(i.sign == carInfo.sign) {
+				i.price = carInfo.price;
+			}
+		})
 	},
-	[CITIES_INFO](state, arr) {
-		state.cities = arr;
+	[CITIES_INFO](state, cityInfo) {
+		//state.cities = arr;
+		console.log(cityInfo)
+		state.cities.map((i) => {
+			if(i.city == cityInfo.city) {
+				i.num = cityInfo.num;
+			}
+		})
 	}
 }

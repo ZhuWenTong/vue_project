@@ -82,6 +82,9 @@
 	import Animals from './demos/animals.vue';
 	import Cars from './demos/cars.vue';
 	import City from './demos/city.vue';
+
+	import {mapState} from 'vuex';
+
 	export default {
 		data() {
 			return {
@@ -97,17 +100,38 @@
 				this.$store.dispatch('MIN_COUNT', 1);
 			}
 		},
-		computed: {
-			getCount() {
-				//return this.$store.state.count;
-				return this.$store.getters.MIN_COUNT;
+		// computed: {
+		// 	getCount() {
+		// 		//return this.$store.state.count;
+		// 		return this.$store.getters.MIN_COUNT;
 
-			},
-			userInfo() {
-				return this.$store.state.userInfo;
-			},
-			animals() {
-				return this.$store.state.animals;
+		// 	},
+		// 	userInfo() {
+		// 		return this.$store.state.userInfo;
+		// 	},
+		// 	animals() {
+		// 		return this.$store.state.animals;
+		// 	},
+		// 	carsInfo() {
+		// 		return this.$store.state.cars;
+		// 	},
+		// 	cityInfo() {
+		// 		return this.$store.state.cities;
+		// 	}
+		// },
+		// 使用mapState辅助函数
+		// computed: mapState({
+		// 	getCount: state => state.count,
+		// 	userInfo: state => state.userInfo,
+		// 	animals: state => state.animals,
+		// 	carsInfo: state => state.cars,
+		// 	cityInfo: state => state.cities
+		// }),
+		//computed属性名称与state子节点名称相同 可以传字符串数组
+		computed: {
+			...mapState(['userInfo', 'animals']),
+			getCount() {
+				return this.$store.state.count;
 			},
 			carsInfo() {
 				return this.$store.state.cars;
