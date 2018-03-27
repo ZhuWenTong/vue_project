@@ -3,7 +3,7 @@ import App from './App.vue'
 
 import 'element-ui/lib/theme-chalk/index.css';
 
-import {Collapse, Button, Rate, Pagination, Progress, Input, Card} from 'element-ui';
+import {Collapse, Button, Rate, Pagination, Progress, Input, Card, Notification} from 'element-ui';
 
 import router from './router/router';
 import store from './store/index'
@@ -15,6 +15,9 @@ Vue.use(Pagination);
 Vue.use(Progress);
 Vue.use(Input);
 Vue.use(Card);
+
+
+Vue.prototype.$notify = Notification;
 
 //全局自定义指令
 Vue.directive('pColor', {

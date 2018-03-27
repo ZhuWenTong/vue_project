@@ -48,12 +48,16 @@
 						add_country = i;
 					}
 				});
-				// if(JSON.stringify(this.countries).indexOf(JSON.stringify(add_country)) == -1) {
-				// 	this.COUNTRIES(add_country);
-				// } else {
-				// 	console.log('不可重复添加')
-				// }
-				this.COUNTRIES({add_country, type: 'add'});
+				if(JSON.stringify(this.countries).indexOf(JSON.stringify(add_country)) == -1) {
+					this.COUNTRIES({add_country, type: 'add'});
+				} else {
+					this.$notify({
+				        title: '警告',
+				        message: '不可重复添加',
+				        type: 'warning'
+			        });
+				}
+				
 			}
 		},
 		computed: {

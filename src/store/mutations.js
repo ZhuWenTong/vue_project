@@ -35,11 +35,7 @@ export default {
 		console.log(data)
 		//state.countries.push(data);
 		if(data.type == 'add') {
-			if(JSON.stringify(state.countries).indexOf(JSON.stringify(data.add_country)) == -1) {
-				state.countries.push(data.add_country);
-			} else {
-				console.log('不可重复添加')
-			}
+			state.countries.push(data.add_country);
 		} else {
 			for(let i = 0; i < state.countries.length; i++) {
 				if(state.countries[i].id == data.id) {
