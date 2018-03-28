@@ -11,18 +11,17 @@
 						<el-button type='primary' @click='addCountry(country.id)'>{{country.name}}</el-button>
 					</li>
 				</ul>
-				<ul>
-					<li>store中countries数据</li>
-					<li v-for='country in countries' :key='country.id'>
-						<span>{{country.name}}</span>
-					</li>
-				</ul>
+				<div class="delcountry">
+					<p>store中countries数据</p>
+					<delCountryStore></delCountryStore>
+				</div>
 			</div>
 		</el-card>
 	</div>
 </template>
 <script>
 	import { mapState, mapActions } from 'vuex';
+	import delCountryStore from '../children/delCountryStore.vue';
 	export default {
 		data() {
 			return {
@@ -62,6 +61,9 @@
 		},
 		computed: {
 			...mapState(['countries'])
+		},
+		components: {
+			delCountryStore
 		}
 	}
 </script>
@@ -71,6 +73,9 @@
 		@include flexes(row, space-between, center);
 		.btn {
 			color: $blue;
+		}
+		.delcountry {
+			max-width: 50%;
 		}
 	}
 </style>

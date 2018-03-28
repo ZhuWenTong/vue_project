@@ -41,11 +41,9 @@
 				<div>
 					<el-button @click='animate2'>{{countryShow ? 'hide' : 'show'}}</el-button>
 					<transition enter-active-class='animated zoomIn' leave-active-class='animated zoomOut'>
-						<ul v-show='countryShow' >
-							<li v-for='country in countries' :key='country.id'>
-								<span>{{country.name}}</span>
-							</li>
-						</ul>
+						<div v-show='countryShow' >
+							<delCountryStore></delCountryStore>
+						</div>
 					</transition>
 				</div>
 			</el-card>
@@ -53,7 +51,8 @@
 	</div>
 </template>
 <script>
-	import { mapState } from 'vuex';
+	import delCountryStore from '../vuex/children/delCountryStore.vue';
+
 	export default {
 		data() {
 			return {
@@ -78,7 +77,10 @@
 			}
 		},
 		computed: {
-			...mapState(['countries'])
+			
+		},
+		components: {
+			delCountryStore
 		}
 	}
 </script>
