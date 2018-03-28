@@ -41,7 +41,7 @@
 				<div>
 					<el-button @click='animate2'>{{countryShow ? 'hide' : 'show'}}</el-button>
 					<transition enter-active-class='animated zoomIn' leave-active-class='animated zoomOut'>
-						<div v-show='countryShow' >
+						<div v-show='countryShow' class="del">
 							<delCountryStore></delCountryStore>
 						</div>
 					</transition>
@@ -98,7 +98,7 @@
 				&:hover {
 					box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .3);
 				}
-				height: 250px;
+				height: 260px;
 				margin-right: 15px;
 				.box {
 					width: 100px;
@@ -118,7 +118,7 @@
 					}		
 				}
 				&:nth-of-type(4) {
-					ul {
+					.del {
 						margin-top: 10px;
 					}		
 				}

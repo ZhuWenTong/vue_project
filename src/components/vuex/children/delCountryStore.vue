@@ -30,5 +30,7 @@
 	}
 </script>
 <style lang='scss' scoped>
-	
+	p {
+		color: #f56c6c;
+	}
 </style>
