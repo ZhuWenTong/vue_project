@@ -2,6 +2,8 @@ import Vue from 'vue'
 import App from './App.vue'
 
 import 'element-ui/lib/theme-chalk/index.css';
+//import 'vue2-animate/dist/vue2-animate.min.css';
+import './assets/animate.min.css';
 
 import {Collapse, Button, Rate, Pagination, Progress, Input, Card, Notification} from 'element-ui';
 
