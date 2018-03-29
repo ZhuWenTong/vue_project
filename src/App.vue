@@ -6,7 +6,7 @@
 					<router-link to="/home">首页</router-link>
 					<router-link to="/user">用户</router-link>
 					<router-link to="/news">路由传参</router-link>
-					<router-link to="/demo">组件通信</router-link>
+					<router-link to="/template">组件通信</router-link>
 					<router-link to="/animate">动画</router-link>
 					<router-link to="/vuex">VUEX</router-link>
 				</nav>

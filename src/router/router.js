@@ -4,7 +4,7 @@ import VueRouter from 'vue-router';
 import Home from '../components/home/home.vue';
 import User from '../components/user/user.vue';
 import News from '../components/news/news.vue';
-import Demo from '../components/demo/demo.vue';
+import Template from '../components/template/template';
 import NewsDetails from '../components/news/news-details.vue';
 import Area from '../components/news/area.vue';
 import Reg from '../components/home/reg.vue';
@@ -34,7 +34,7 @@ export default new VueRouter({
     }, {
         path: '/news',
         component: News
-    },{
+    }, {
         path: '/news/:id',
         name: 'newsdetails',
         component: NewsDetails,
@@ -44,9 +44,9 @@ export default new VueRouter({
             component: Area
         }]
     }, {
-        path: '/demo',
-        name: 'demo',
-        component: Demo
+        path: '/template',
+        name: 'template',
+        component: Template
     }, {
         path: '/animate',
         name: 'animate',

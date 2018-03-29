@@ -18,6 +18,11 @@
 				</transition>
 			</keep-alive>
 			<el-button @click='changeView'>切换组件</el-button>
+			<div class="btn">
+				<Btn></Btn>
+				<Btn></Btn>
+				<Btn></Btn>
+			</div>
 		</div>
 	</div>
 </template>
@@ -25,6 +30,7 @@
 	import Son from './son';
 	import A from './a.vue';
 	import B from './b.vue';
+	import Btn from './children/btn';
 
 	export default {
 		name: 'demo',
@@ -59,7 +65,8 @@
 		components: {
 			Son,
 			A,
-			B
+			B,
+			Btn
 		}
 	}
 </script>
@@ -84,5 +91,14 @@
 	.component-fade-enter, .component-fade-leave-to
 	/* .component-fade-leave-active for below version 2.1.8 */ {
 	  	opacity: 0;
+	}
+	.btn {
+		@include borders(0);
+		@include flexes(row, flex-start, center);
+		margin-top: 10px;
+		padding-top: 10px;
+		div {
+			margin-right: 4px;
+		}
 	}
 </style>
