@@ -1,7 +1,6 @@
 <template>
     <div id="wrap-content">
         <div class="content">
-            <Progress class='progress' :percentage="percentage" :progressShow="progressShow" @getPercentage="getPercentageVal"></Progress>
             <div v-for="item in items" class="rate">
                 <span>{{item.name}}</span>
                 <Common @getrate='getrateVal' :name='item.name' :num='item.num'></Common>
@@ -33,7 +32,6 @@
 <script>
     import Common from '../common/common.vue';
     import Page from '../common/page.vue';
-    import Progress from '../common/progress.vue';
     import {unique, delRepeatArr} from '../../assets/public.js';
     export default {
         data() {
@@ -102,8 +100,7 @@
         },
         components: {
             Common,
-            Page,
-            Progress
+            Page
         }
     };
 </script>

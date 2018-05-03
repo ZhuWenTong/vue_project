@@ -1,6 +1,11 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
+import NProgress from 'nprogress';
+import 'nprogress/nprogress.css';
+
+Vue.use(NProgress);
+
 import Home from '../components/home/home.vue';
 import User from '../components/user/user.vue';
 import News from '../components/news/news.vue';
@@ -14,7 +19,7 @@ import VueStore from '../components/vuex/parent.vue';
 
 
 Vue.use(VueRouter);
-export default new VueRouter({
+const router = new VueRouter({
     linkActiveClass: 'active', //更改默认选中class名
     routes: [{
         path: '/home',
@@ -59,4 +64,14 @@ export default new VueRouter({
         path: '*',
         redirect: '/home'
     }]
+});
+
+router.beforeEach((to, from, next) => {
+    NProgress.start();
+    next();
+});
+router.afterEach(() => {
+    NProgress.done();
 })
+
+export default router;
