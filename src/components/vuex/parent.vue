@@ -84,6 +84,18 @@
 			<div class="country">
 				<Country></Country>
 			</div>
+			<el-card>
+				<div slot='header'>
+					<span>store中使用modules</span>
+				</div>
+				<el-input type='text' placeholder='请输入游戏名' clearable v-model='game' />
+				<el-button type='success' @click='addGames'>添加</el-button>
+				<ul>
+					<li v-for='item in games' :key='item.name'>
+						{{item.name}}
+					</li>
+				</ul>
+			</el-card>
 		</div>
 	</div>
 </template>
@@ -101,10 +113,12 @@
 	export default {
 		data() {
 			return {
-
+				canAdd: true,
+				game: ''
 			}
 		},
 		methods: {
+			...mapActions('games', ['add_games']),
 			countMin() {
 				if(this.$store.state.count == 0) {
 					return;
@@ -112,7 +126,32 @@
 				//this.$store.commit('MIN_COUNT', 1);
 				this.$store.dispatch('MIN_COUNT', 1);
 			},
-			
+			addGames() {
+				if(this.game) {
+					this.games.map(i => {
+						if(i.name == this.game) {
+							this.canAdd = false;
+							return;
+						}
+					})
+					if(this.canAdd) {
+						let obj = {
+							name: this.game,
+							id: this.game
+						}
+						this.add_games(obj);
+					} else {
+						// this.$message({
+						// 	message: '不可重复添加',
+						// 	type: 'warning'
+						// });
+						this.$message.warning('不可重复添加！')
+					}
+				}
+			}
+		},
+		mounted() {
+			console.log(this.$store.state)
 		},
 		// computed: {
 		// 	getCount() {
@@ -144,6 +183,7 @@
 		//computed属性名称与state子节点名称相同 可以传字符串数组
 		computed: {
 			...mapState(['userInfo', 'animals']),
+			...mapState('games', ['games']),
 			getCount() {
 				return this.$store.state.count;
 			},
@@ -183,6 +223,9 @@
 			.el-card:nth-of-type(odd) {
 				margin-left: 15px;
 			}
+		}
+		.el-input {
+			width: 180px;
 		}
 	}
 </style>

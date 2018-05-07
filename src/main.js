@@ -5,7 +5,7 @@ import 'element-ui/lib/theme-chalk/index.css';
 //import 'vue2-animate/dist/vue2-animate.min.css';
 import './assets/animate.min.css';
 
-import {Collapse, Button, Rate, Pagination, Progress, Input, Card, Notification} from 'element-ui';
+import {Collapse, Button, Rate, Pagination, Progress, Input, Card, Notification, Message} from 'element-ui';
 
 import router from './router/router';
 import store from './store/index'
@@ -20,6 +20,7 @@ Vue.use(Card);
 
 
 Vue.prototype.$notify = Notification;
+Vue.prototype.$message = Message;
 
 //全局自定义指令
 Vue.directive('pColor', {
