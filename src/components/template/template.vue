@@ -11,12 +11,12 @@
 			</Son>
 			<p class="miniborder">子组件传来: <span v-pColor:#409EFF>{{sonMsg}}</span></p>
 			<!--加上keep-alive 不会重新加载组件 缓存在内存中-->
-			<keep-alive>
-				<transition name='component-fade' mode='out-in'>
+			<transition name='component-fade' mode='out-in'>
+				<keep-alive>
 					<!--动态组件-->
 					<component :is='currentView'></component>
-				</transition>
-			</keep-alive>
+				</keep-alive>
+			</transition>
 			<el-button @click='changeView'>切换组件</el-button>
 			<div class="btn">
 				<Btn></Btn>

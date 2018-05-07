@@ -18,7 +18,11 @@
 
 <script>
 export default {
-  	
+  	// watch: {
+	  //   $route() {
+	  //       console.log(this.$route)
+	  //   }
+   //  }
 };
 </script>
 
