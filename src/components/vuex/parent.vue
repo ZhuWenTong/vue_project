@@ -118,7 +118,7 @@
 			}
 		},
 		methods: {
-			...mapActions('games', ['add_games']),
+			...mapActions('games', ['add_games']), // 映射modules中actions的方法
 			countMin() {
 				if(this.$store.state.count == 0) {
 					return;
@@ -139,7 +139,7 @@
 							name: this.game,
 							id: this.game
 						}
-						this.add_games(obj);
+						this.add_games(obj); //调用add_games
 					} else {
 						// this.$message({
 						// 	message: '不可重复添加',
