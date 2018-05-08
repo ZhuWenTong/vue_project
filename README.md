@@ -19,8 +19,8 @@ For detailed explanation on how things work, consult the [docs for vue-loader](h
 
 ## demo
 1.组件通信
-![组件通信] (src/assets/img/prop.png)
+![组件通信] (https://github.com/ZhuWenTong/vue_project/blob/master/src/assets/img/prop.png)
 2. 动画
-![animate] (src/assets/img/animate.png)
+![animate] (https://github.com/ZhuWenTong/vue_project/blob/master/src/assets/img/animate.png)
 3. vuex
-![vuex] (src/assets/img/vuex.png)
+![vuex] (https://github.com/ZhuWenTong/vue_project/blob/master/src/assets/img/vuex.png)
