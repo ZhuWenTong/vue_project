@@ -40,7 +40,7 @@ export default {
 	}
 	#wrap-nav {
 		width: 100%;
-		background: $red;
+		background: $main-color;
 		position: fixed;
 		top: 0;
 		z-index: 100;
@@ -56,12 +56,11 @@ export default {
 				color: $white;
 				transition: all 0.5s;
 				&:hover {
-					
-					background: #f12e2e; 
+					background: $general-color; 
 				}
 			}
 			.active {
-				background: #f12e2e;
+				background: $general-color;
 			}
 		}
 	}

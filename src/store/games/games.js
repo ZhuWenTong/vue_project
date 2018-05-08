@@ -10,14 +10,14 @@ const state = {
 
 const mutations = {
 	set_games: (state, data) => {
-		console.log(data)
+		//console.log(data)
 		state.games.push(data);
 	}
 }
 
 const actions = {
 	add_games : ({commit}, data) => {
-		console.log(data)
+		//console.log(data)
 		commit('set_games', data);
 	}
 }

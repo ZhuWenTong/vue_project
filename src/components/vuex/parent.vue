@@ -88,7 +88,7 @@
 				<div slot='header'>
 					<span>store中使用modules</span>
 				</div>
-				<el-input type='text' placeholder='请输入游戏名' clearable v-model='game' />
+				<el-input type='text' placeholder='请输入游戏名' clearable v-model='game' @change='intGame' />
 				<el-button type='success' @click='addGames'>添加</el-button>
 				<ul>
 					<li v-for='item in games' :key='item.name'>
@@ -125,6 +125,9 @@
 				}
 				//this.$store.commit('MIN_COUNT', 1);
 				this.$store.dispatch('MIN_COUNT', 1);
+			},
+			intGame(val) {
+				this.canAdd = true;
 			},
 			addGames() {
 				if(this.game) {
@@ -182,7 +185,7 @@
 		// }),
 		//computed属性名称与state子节点名称相同 可以传字符串数组
 		computed: {
-			...mapState(['userInfo', 'animals']),
+			...mapState(['userInfo', 'animals']), //映射state中的对象
 			...mapState('games', ['games']),
 			getCount() {
 				return this.$store.state.count;
@@ -209,8 +212,8 @@
 	@import '../../assets/common.scss';
 	#wrap-store {
 		width: 100%;
-		background: url('../../assets/img/bg.jpg') no-repeat;
-		background-size: 100%;
+		background: url('../../assets/img/bg.jpg') no-repeat center 0;
+		background-color: #0c0c0e;
 		.vuex, .store {
 			width: 1600px;
 			margin: 0 auto;
