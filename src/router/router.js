@@ -30,6 +30,7 @@ const Reg = resolve => require(['../components/home/reg.vue'], resolve);
 const Login = resolve => require(['../components/home/login.vue'], resolve);
 const Animate = resolve => require(['../components/animate/animate.vue'], resolve);
 const VueStore = resolve => require(['../components/vuex/parent.vue'], resolve);
+const Bug = resolve => require(['../components/bug/bug.vue'], resolve);
 
 
 Vue.use(VueRouter);
@@ -80,6 +81,10 @@ const router = new VueRouter({
         path: '/vuex',
         name: 'vuex',
         component: VueStore
+    }, {
+        path: '/bug',
+        name: 'bug',
+        component: Bug
     }, {
         path: '*',
         redirect: '/home'

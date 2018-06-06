@@ -9,6 +9,7 @@
 					<router-link to="/template">组件通信</router-link>
 					<router-link to="/animate">动画</router-link>
 					<router-link to="/vuex">VUEX</router-link>
+					<router-link :to="{name: 'bug'}">BUG</router-link>
 				</nav>
 			</div>
 			<router-view></router-view>
