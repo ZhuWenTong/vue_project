@@ -1,3 +1,35 @@
+<style scoped lang='scss'>
+	@import '../../assets/common';
+	#wrap-info {
+		width: 100%;
+		.info {
+			width: 1600px;
+			margin: 0 auto;
+		}
+	}
+	.el-input {
+		width: 200px;
+	}
+	p {
+		line-height: $li-height;
+	}
+	.component-fade-enter-active, .component-fade-leave-active {
+	  	transition: opacity .3s ease;
+	}
+	.component-fade-enter, .component-fade-leave-to
+	/* .component-fade-leave-active for below version 2.1.8 */ {
+	  	opacity: 0;
+	}
+	.btn {
+		@include borders(0);
+		@include flexes(row, flex-start, center);
+		margin-top: 10px;
+		padding-top: 10px;
+		div {
+			margin-right: 4px;
+		}
+	}
+</style>
 <template>
 	<div id="wrap-info">
 		<div class="info">
@@ -70,35 +102,3 @@
 		}
 	}
 </script>
-<style scoped lang='scss'>
-	@import '../../assets/common';
-	#wrap-info {
-		width: 100%;
-		.info {
-			width: 1600px;
-			margin: 0 auto;
-		}
-	}
-	.el-input {
-		width: 200px;
-	}
-	p {
-		line-height: $li-height;
-	}
-	.component-fade-enter-active, .component-fade-leave-active {
-	  	transition: opacity .3s ease;
-	}
-	.component-fade-enter, .component-fade-leave-to
-	/* .component-fade-leave-active for below version 2.1.8 */ {
-	  	opacity: 0;
-	}
-	.btn {
-		@include borders(0);
-		@include flexes(row, flex-start, center);
-		margin-top: 10px;
-		padding-top: 10px;
-		div {
-			margin-right: 4px;
-		}
-	}
-</style>

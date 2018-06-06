@@ -1,3 +1,30 @@
+<style lang="scss" scoped>
+    @import '../../assets/common';
+    #wrap-user {
+        width: 100%;
+        .user {
+            width: 1600px;
+            margin: 0 auto;
+        }
+    }
+    ul {
+        @extend .miniborder;
+        li {
+            color: $general-color;
+            &:hover {
+                color: $white;
+                background: $blue;
+            }
+        }
+    }
+    .rate {
+        height: $li-height;
+        @include flexes(row, flex-start, center);
+        &>span {
+            margin-right: 10px;
+        }
+    }
+</style>
 <template>
     <div id="wrap-user">
         <div class="user">
@@ -161,30 +188,3 @@
         }
     }
 </script>
-<style lang="scss" scoped>
-    @import '../../assets/common';
-    #wrap-user {
-        width: 100%;
-        .user {
-            width: 1600px;
-            margin: 0 auto;
-        }
-    }
-    ul {
-        @extend .miniborder;
-        li {
-            color: $general-color;
-            &:hover {
-                color: $white;
-                background: $blue;
-            }
-        }
-    }
-    .rate {
-        height: $li-height;
-        @include flexes(row, flex-start, center);
-        &>span {
-            margin-right: 10px;
-        }
-    }
-</style>

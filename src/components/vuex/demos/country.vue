@@ -1,3 +1,15 @@
+<style lang='scss' scoped>
+	@import '../../../assets/common.scss';
+	.content {
+		@include flexes(row, space-between, center);
+		.btn {
+			color: $blue;
+		}
+		.delcountry {
+			max-width: 50%;
+		}
+	}
+</style>
 <template>
 	<div>
 		<el-card>
@@ -67,15 +79,3 @@
 		}
 	}
 </script>
-<style lang='scss' scoped>
-	@import '../../../assets/common.scss';
-	.content {
-		@include flexes(row, space-between, center);
-		.btn {
-			color: $blue;
-		}
-		.delcountry {
-			max-width: 50%;
-		}
-	}
-</style>

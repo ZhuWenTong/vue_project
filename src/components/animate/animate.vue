@@ -1,3 +1,74 @@
+<style lang='scss' scoped>
+	@import '../../assets/common';
+	#wrap-anim {
+		width: 100%;
+		.anim {
+			width: 1600px;
+			margin: 0 auto;
+			@include flexes(row, flex-start, center);
+			flex-wrap: wrap;
+			.el-card {
+				transition: all 0.2s;
+				&:hover {
+					box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .3);
+				}
+				height: 260px;
+				margin-right: 15px;
+				.box {
+					width: 100px;
+					height: 100px;
+					background: $yellow;
+					margin-top: 10px;
+					
+				}
+				&:nth-of-type(2) {
+					.box {
+						background: $green;
+					}		
+				}
+				&:nth-of-type(3) {
+					.box {
+						background: $blue;
+					}		
+				}
+				&:nth-of-type(4) {
+					.del {
+						margin-top: 10px;
+					}		
+				}
+			}
+		}
+	}
+
+	.fade-enter, .fade-leave-to {
+		opacity: 0;
+	}
+	.fade-enter-active, .fade-leave-active {
+		transition: all 1s;
+	}
+	.fade-enter-to, .fade-leave {
+		opacity: 1;
+	}
+
+	.bounce-enter-active {
+  		animation: bounce-in .5s;
+	}
+	.bounce-leave-active {
+  		animation: bounce-in .5s reverse;
+	}
+	@keyframes bounce-in {
+  		0% {
+    		transform: scale(0);
+  		}
+  		50% {
+    		transform: scale(1.5);
+  		}
+  		100% {
+    		transform: scale(1);
+  		}
+	}
+
+</style>
 <template>
 	<div id="wrap-anim">
 		<div class="anim">
@@ -84,74 +155,3 @@
 		}
 	}
 </script>
-<style lang='scss' scoped>
-	@import '../../assets/common';
-	#wrap-anim {
-		width: 100%;
-		.anim {
-			width: 1600px;
-			margin: 0 auto;
-			@include flexes(row, flex-start, center);
-			flex-wrap: wrap;
-			.el-card {
-				transition: all 0.2s;
-				&:hover {
-					box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .3);
-				}
-				height: 260px;
-				margin-right: 15px;
-				.box {
-					width: 100px;
-					height: 100px;
-					background: $yellow;
-					margin-top: 10px;
-					
-				}
-				&:nth-of-type(2) {
-					.box {
-						background: $green;
-					}		
-				}
-				&:nth-of-type(3) {
-					.box {
-						background: $blue;
-					}		
-				}
-				&:nth-of-type(4) {
-					.del {
-						margin-top: 10px;
-					}		
-				}
-			}
-		}
-	}
-
-	.fade-enter, .fade-leave-to {
-		opacity: 0;
-	}
-	.fade-enter-active, .fade-leave-active {
-		transition: all 1s;
-	}
-	.fade-enter-to, .fade-leave {
-		opacity: 1;
-	}
-
-	.bounce-enter-active {
-  		animation: bounce-in .5s;
-	}
-	.bounce-leave-active {
-  		animation: bounce-in .5s reverse;
-	}
-	@keyframes bounce-in {
-  		0% {
-    		transform: scale(0);
-  		}
-  		50% {
-    		transform: scale(1.5);
-  		}
-  		100% {
-    		transform: scale(1);
-  		}
-	}
-
-</style>

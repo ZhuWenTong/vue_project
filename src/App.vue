@@ -1,32 +1,3 @@
-<template>
-  	<div id="app">
-		<div class="main">
-			<div id="wrap-nav">
-				<nav>
-					<router-link to="/home">首页</router-link>
-					<router-link to="/user">用户</router-link>
-					<router-link to="/news">路由传参</router-link>
-					<router-link to="/template">组件通信</router-link>
-					<router-link to="/animate">动画</router-link>
-					<router-link to="/vuex">VUEX</router-link>
-					<router-link :to="{name: 'bug'}">BUG</router-link>
-				</nav>
-			</div>
-			<router-view></router-view>
-		</div>
-  	</div>
-</template>
-
-<script>
-export default {
-  	// watch: {
-	  //   $route() {
-	  //       console.log(this.$route)
-	  //   }
-   //  }
-};
-</script>
-
 <style lang="scss" >
 	@import './assets/common';
 	* {
@@ -67,3 +38,33 @@ export default {
 	}
 	
 </style>
+
+<template>
+  	<div id="app">
+		<div class="main">
+			<div id="wrap-nav">
+				<nav>
+					<router-link to="/home">首页</router-link>
+					<router-link to="/user">用户</router-link>
+					<router-link to="/news">路由传参</router-link>
+					<router-link to="/template">组件通信</router-link>
+					<router-link to="/animate">动画</router-link>
+					<router-link to="/vuex">VUEX</router-link>
+					<router-link :to="{name: 'bug'}">BUG</router-link>
+				</nav>
+			</div>
+			<router-view></router-view>
+		</div>
+  	</div>
+</template>
+
+<script>
+export default {
+  	// watch: {
+	  //   $route() {
+	  //       console.log(this.$route)
+	  //   }
+   //  }
+};
+</script>
+

@@ -1,3 +1,27 @@
+<style scoped lang='scss'>
+	@import '../../assets/common.scss';
+	#wrap-store {
+		width: 100%;
+		background: url('../../assets/img/bg.jpg') no-repeat center 0;
+		background-color: #0c0c0e;
+		.vuex, .store {
+			width: 1600px;
+			margin: 0 auto;
+			@include flexes(row, flex-start, center);
+			flex-wrap: wrap;
+			@include borders();
+			.el-card {
+				margin-right: 15px;
+			}
+			.el-card:nth-of-type(odd) {
+				margin-left: 15px;
+			}
+		}
+		.el-input {
+			width: 180px;
+		}
+	}
+</style>
 <template>
 	<div id="wrap-store">
 		<div class="store">
@@ -208,27 +232,3 @@
 		}
 	}
 </script>
-<style scoped lang='scss'>
-	@import '../../assets/common.scss';
-	#wrap-store {
-		width: 100%;
-		background: url('../../assets/img/bg.jpg') no-repeat center 0;
-		background-color: #0c0c0e;
-		.vuex, .store {
-			width: 1600px;
-			margin: 0 auto;
-			@include flexes(row, flex-start, center);
-			flex-wrap: wrap;
-			@include borders();
-			.el-card {
-				margin-right: 15px;
-			}
-			.el-card:nth-of-type(odd) {
-				margin-left: 15px;
-			}
-		}
-		.el-input {
-			width: 180px;
-		}
-	}
-</style>

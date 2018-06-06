@@ -1,3 +1,11 @@
+<style scoped>
+	.el-input {
+		width: 200px;
+	}
+	.el-card {
+		width: 400px;
+	}
+</style>
 <template>
 	<el-card>
 		<div slot='header'>son组件</div>
@@ -24,11 +32,3 @@
 		}
 	}
 </script>
-<style scoped>
-	.el-input {
-		width: 200px;
-	}
-	.el-card {
-		width: 400px;
-	}
-</style>

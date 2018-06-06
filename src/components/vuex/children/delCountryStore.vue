@@ -1,3 +1,8 @@
+<style lang='scss' scoped>
+	p {
+		color: #f56c6c;
+	}
+</style>
 <template>
 	<div>
 		<p v-show='countries.length == 0'>这里是公共组件: store中无countries数据</p>
@@ -29,8 +34,3 @@
 		}
 	}
 </script>
-<style lang='scss' scoped>
-	p {
-		color: #f56c6c;
-	}
-</style>

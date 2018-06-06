@@ -1,39 +1,34 @@
 <style lang="scss" scoped>
-@import '../../assets/common';
-
-#wrap-content {
-    width: 100%;
-    .content {
-        width: 1600px;
-        margin: 0 auto;
+    @import '../../assets/common';
+    #wrap-content {
+        width: 100%;
+        .content {
+            width: 1600px;
+            margin: 0 auto;
+        }
     }
-}
-
-.transition-box {
-    margin-bottom: 10px;
-    width: 200px;
-    height: 100px;
-    border-radius: 4px;
-    background-color: $blue;
-    text-align: center;
-    color: $white;
-    padding: 40px 20px;
-    box-sizing: border-box;
-    margin-right: 20px;
-}
-
-.box {
-    @include flexes(row, space-between, center);
-}
-
-.rate {
-    @include flexes(row, flex-start, center);
-    &>span {
-        line-height: $li-height;
-        margin-right: 10px;
+    .transition-box {
+        margin-bottom: 10px;
+        width: 200px;
+        height: 100px;
+        border-radius: 4px;
+        background-color: $blue;
+        text-align: center;
+        color: $white;
+        padding: 40px 20px;
+        box-sizing: border-box;
+        margin-right: 20px;
     }
-}
-
+    .box {
+        @include flexes(row, space-between, center);
+    }
+    .rate {
+        @include flexes(row, flex-start, center);
+        &>span {
+            line-height: $li-height;
+            margin-right: 10px;
+        }
+    }
 </style>
 
 <template>

@@ -1,3 +1,9 @@
+<style scoped lang="scss">
+	@import '../../assets/common.scss';
+	.miniborder {
+		@include flexes(row, space-between, center);
+	}
+</style>
 <template>
 	<div>
 		<el-card>
@@ -35,9 +41,3 @@
 		}
 	}
 </script>
-<style scoped lang="scss">
-	@import '../../assets/common.scss';
-	.miniborder {
-		@include flexes(row, space-between, center);
-	}
-</style>

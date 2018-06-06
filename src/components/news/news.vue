@@ -1,3 +1,17 @@
+<style lang='scss' scoped>
+	@import '../../assets/common';
+	#wrap-news {
+		width: 100%;
+		.news {
+			width: 1600px;
+			margin: 0 auto;
+		}
+	}
+	li {
+		@include flexes(row, flex-start, center);
+		height: $li-height;
+	}
+</style>
 <template>
 	<div id="wrap-news">
 		<div class="news">
@@ -35,17 +49,3 @@
 		}
 	}
 </script>
-<style lang='scss' scoped>
-	@import '../../assets/common';
-	#wrap-news {
-		width: 100%;
-		.news {
-			width: 1600px;
-			margin: 0 auto;
-		}
-	}
-	li {
-		@include flexes(row, flex-start, center);
-		height: $li-height;
-	}
-</style>

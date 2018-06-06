@@ -1,3 +1,21 @@
+<style lang='scss' scoped>
+	@import '../../assets/common';
+	#wrap-details {
+		width: 100%;
+		.details {
+			width: 1600px;
+			margin: 0 auto;
+		}
+	}
+	p {
+		color: $blue;
+		line-height: $span-height;
+		font-size: $size + 10px;
+	}
+	.active {
+		color: #f56c6c;
+	}
+</style>
 <template>
 	<div id="wrap-details">
 		<div class="details">
@@ -37,21 +55,3 @@
 		}
 	}
 </script>
-<style lang='scss' scoped>
-	@import '../../assets/common';
-	#wrap-details {
-		width: 100%;
-		.details {
-			width: 1600px;
-			margin: 0 auto;
-		}
-	}
-	p {
-		color: $blue;
-		line-height: $span-height;
-		font-size: $size + 10px;
-	}
-	.active {
-		color: #f56c6c;
-	}
-</style>
