@@ -20,10 +20,11 @@
 				this.p = `这是${aid}`;
 			}
 		},
-		watch: {
-			$route() {
-				this.writeP();
-			}
-		}
+		// watch: {
+		// 	$route() {
+		// 		this.writeP();
+		// 	}
+		// }
+		
 	}
 </script>

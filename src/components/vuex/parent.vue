@@ -1,4 +1,4 @@
-<style scoped lang='scss'>
+<style scoped lang='scss' scoped>
 	@import '../../assets/common.scss';
 	#wrap-store {
 		width: 100%;

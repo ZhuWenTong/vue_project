@@ -21,11 +21,12 @@
 		<div class="details">
 			<p>{{con}}</p>
 			<ul>
-				<li v-for='item in items'>
-					<router-link :to="{name: 'area', params: {aid: item.aid}}">{{item.area}}</router-link>
+				<li v-for='item in items' :key='item.aid' @click='handleTo(item.aid)'>
+					{{item.area}}
+					<!-- <router-link :to="{name: 'area', params: {aid: item.aid}}">{{item.area}}</router-link> -->
 				</li>
 			</ul>
-			<router-view></router-view>
+			<router-view :key='activeDate'></router-view>
 		</div>
 	</div>
 </template>
@@ -40,18 +41,24 @@
 				}, {
 					area: 'B',
 					aid: 'b'
-				}]
+				}],
+				activeDate: ''
 			}
 		},
 		mounted() {
 			let id = this.$route.params.id;
 			console.log(id)
 			this.con = `这是新闻${id}`;
+			
 		},
 		methods: {
 			// goArea(aid) {
 			// 	this.$router.push({name:'area', params: {aid: aid}})
 			// }
+			handleTo(aid) {
+				this.activeDate = aid;
+				this.$router.push({name:'area', params: {aid: aid}})
+			}
 		}
 	}
 </script>

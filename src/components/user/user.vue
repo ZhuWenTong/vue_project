@@ -1,11 +1,8 @@
 <style lang="scss" scoped>
     @import '../../assets/common';
-    #wrap-user {
-        width: 100%;
-        .user {
-            width: 1600px;
-            margin: 0 auto;
-        }
+   .user {
+        width: 1600px;
+        margin: 0 auto;
     }
     ul {
         @extend .miniborder;
@@ -26,32 +23,30 @@
     }
 </style>
 <template>
-    <div id="wrap-user">
-        <div class="user">
-            <div class="rate" v-for="item in items">
-                <span>{{item.city}}</span>
-                <Common @getrate='getrateVal' :name="item.city" :num="item.num"></Common>
-            </div>
-            <p>{{msg}}</p>
-            <!-- <Page :from='pagefrom' :current-page="currentPage" @currentPage='pagechange'></Page> -->
-            <ul>
-                <li v-for="item in items" :key="item.city">{{item.city}}</li>
-            </ul>
-            <ul>
-                <li v-for="(item, index) in items" :key="item.city" @click="getInfo(item, $event)">{{index}}---{{item.city}}</li>
-            </ul>
-            <el-button @click.once='addCity'>添加</el-button>
-            <!-- <ul>
-                <li v-for="item in obj">{{item}}</li>
-            </ul>
-            <ul>
-                <li v-for="(item, key) in obj">{{key}} --- {{item}}</li>
-            </ul>
-            <ul>
-                <li v-for="(item, key, index) in obj">{{index}}---{{key}}---{{item}}</li>
-            </ul> -->
-            <Page :current-page="currentPage" :all-num='allNum' @currentPage='pagechange'></Page>
+   <div class="user">
+        <div class="rate" v-for="item in items">
+            <span>{{item.city}}</span>
+            <Common @getrate='getrateVal' :name="item.city" :num="item.num"></Common>
         </div>
+        <p>{{msg}}</p>
+        <!-- <Page :from='pagefrom' :current-page="currentPage" @currentPage='pagechange'></Page> -->
+        <ul>
+            <li v-for="item in items" :key="item.city">{{item.city}}</li>
+        </ul>
+        <ul>
+            <li v-for="(item, index) in items" :key="item.city" @click="getInfo(item, $event)">{{index}}---{{item.city}}</li>
+        </ul>
+        <el-button @click.once='addCity'>添加</el-button>
+        <!-- <ul>
+            <li v-for="item in obj">{{item}}</li>
+        </ul>
+        <ul>
+            <li v-for="(item, key) in obj">{{key}} --- {{item}}</li>
+        </ul>
+        <ul>
+            <li v-for="(item, key, index) in obj">{{index}}---{{key}}---{{item}}</li>
+        </ul> -->
+        <Page :current-page="currentPage" :all-num='allNum' @currentPage='pagechange'></Page>
     </div>
 </template>
 <script>

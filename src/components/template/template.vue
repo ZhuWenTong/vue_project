@@ -1,11 +1,8 @@
-<style scoped lang='scss'>
+<style scoped lang='scss' scoped>
 	@import '../../assets/common';
-	#wrap-info {
-		width: 100%;
-		.info {
-			width: 1600px;
-			margin: 0 auto;
-		}
+	.info {
+		width: 1600px;
+		margin: 0 auto;
 	}
 	.el-input {
 		width: 200px;
@@ -31,30 +28,28 @@
 	}
 </style>
 <template>
-	<div id="wrap-info">
-		<div class="info">
-			<el-input type="text" v-model='msg' placeholder='给子组件传值'></el-input>
-			<p>{{msg}}</p>
-			<!--父传子 props  子传父 emit-->
-			<Son :title='msg' @fromSon="getSonMsg">
-				<!--插槽-->
-				<p slot='slot1' v-changeColor>slot1</p>
-				<p slot='slot2' slot-scope='props'>{{props.title}}</p>
-			</Son>
-			<p class="miniborder">子组件传来: <span v-pColor:#409EFF>{{sonMsg}}</span></p>
-			<!--加上keep-alive 不会重新加载组件 缓存在内存中-->
-			<transition name='component-fade' mode='out-in'>
-				<keep-alive>
-					<!--动态组件-->
-					<component :is='currentView'></component>
-				</keep-alive>
-			</transition>
-			<el-button @click='changeView'>切换组件</el-button>
-			<div class="btn">
-				<Btn></Btn>
-				<Btn></Btn>
-				<Btn></Btn>
-			</div>
+	<div class="info">
+		<el-input type="text" v-model='msg' placeholder='给子组件传值'></el-input>
+		<p>{{msg}}</p>
+		<!--父传子 props  子传父 emit-->
+		<Son :title='msg' @fromSon="getSonMsg">
+			<!--插槽-->
+			<p slot='slot1' v-changeColor>slot1</p>
+			<p slot='slot2' slot-scope='props'>{{props.title}}</p>
+		</Son>
+		<p class="miniborder">子组件传来: <span v-pColor:#409EFF>{{sonMsg}}</span></p>
+		<!--加上keep-alive 不会重新加载组件 缓存在内存中-->
+		<transition name='component-fade' mode='out-in'>
+			<keep-alive>
+				<!--动态组件-->
+				<component :is='currentView'></component>
+			</keep-alive>
+		</transition>
+		<el-button @click='changeView'>切换组件</el-button>
+		<div class="btn">
+			<Btn></Btn>
+			<Btn></Btn>
+			<Btn></Btn>
 		</div>
 	</div>
 </template>

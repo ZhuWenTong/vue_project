@@ -1,11 +1,8 @@
 <style lang="scss" scoped>
     @import '../../assets/common';
-    #wrap-content {
-        width: 100%;
-        .content {
-            width: 1600px;
-            margin: 0 auto;
-        }
+    .content {
+        width: 1600px;
+        margin: 0 auto;
     }
     .transition-box {
         margin-bottom: 10px;
@@ -32,32 +29,30 @@
 </style>
 
 <template>
-    <div id="wrap-content">
-        <div class="content">
-            <div v-for="item in items" class="rate">
-                <span>{{item.name}}</span>
-                <Common @getrate='getrateVal' :name='item.name' :num='item.num'></Common>
-            </div>
-            <p>{{msg}}</p>
-            <ul>
-                <li v-for="item in items">{{item.name}}</li>
-            </ul>
-            <el-button @click="show = !show" type="primary">Click Me</el-button>
-            <div style="display: flex; margin-top: 20px; height: 100px;">
-                <transition name="el-fade-in-linear">
-                    <div v-show="show" class="transition-box">.el-fade-in-linear
-                        <span class="el-icon-info"></span>
-                    </div>
-                </transition>
-                <transition name="el-fade-in">
-                    <div v-show="show" class="transition-box">.el-fade-in</div>
-                </transition>
-            </div>
-            <router-link :to="{name: 'reg', params: {p: 'reg'}}">注册</router-link>
-            <router-link :to="{name: 'login', params: {p: 'login'}}">登录</router-link>
-            <router-view></router-view>
-            <Page :current-page="currentPage" :all-num="allNum" @currentPage='pagechange'></Page>
+    <div class="content">
+        <div v-for="item in items" class="rate">
+            <span>{{item.name}}</span>
+            <Common @getrate='getrateVal' :name='item.name' :num='item.num'></Common>
         </div>
+        <p>{{msg}}</p>
+        <ul>
+            <li v-for="item in items">{{item.name}}</li>
+        </ul>
+        <el-button @click="show = !show" type="primary">Click Me</el-button>
+        <div style="display: flex; margin-top: 20px; height: 100px;">
+            <transition name="el-fade-in-linear">
+                <div v-show="show" class="transition-box">.el-fade-in-linear
+                    <span class="el-icon-info"></span>
+                </div>
+            </transition>
+            <transition name="el-fade-in">
+                <div v-show="show" class="transition-box">.el-fade-in</div>
+            </transition>
+        </div>
+        <router-link :to="{name: 'reg', params: {p: 'reg'}}">注册</router-link>
+        <router-link :to="{name: 'login', params: {p: 'login'}}">登录</router-link>
+        <router-view></router-view>
+        <Page :current-page="currentPage" :all-num="allNum" @currentPage='pagechange'></Page>
     </div>
 </template>
 <script>

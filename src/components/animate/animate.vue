@@ -1,41 +1,38 @@
 <style lang='scss' scoped>
 	@import '../../assets/common';
-	#wrap-anim {
-		width: 100%;
-		.anim {
-			width: 1600px;
-			margin: 0 auto;
-			@include flexes(row, flex-start, center);
-			flex-wrap: wrap;
-			.el-card {
-				transition: all 0.2s;
-				&:hover {
-					box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .3);
-				}
-				height: 260px;
-				margin-right: 15px;
+	.anim {
+		width: 1600px;
+		margin: 0 auto;
+		@include flexes(row, flex-start, center);
+		flex-wrap: wrap;
+		.el-card {
+			transition: all 0.2s;
+			&:hover {
+				box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .3);
+			}
+			height: 260px;
+			margin-right: 15px;
+			.box {
+				width: 100px;
+				height: 100px;
+				background: $yellow;
+				margin-top: 10px;
+				
+			}
+			&:nth-of-type(2) {
 				.box {
-					width: 100px;
-					height: 100px;
-					background: $yellow;
+					background: $green;
+				}		
+			}
+			&:nth-of-type(3) {
+				.box {
+					background: $blue;
+				}		
+			}
+			&:nth-of-type(4) {
+				.del {
 					margin-top: 10px;
-					
-				}
-				&:nth-of-type(2) {
-					.box {
-						background: $green;
-					}		
-				}
-				&:nth-of-type(3) {
-					.box {
-						background: $blue;
-					}		
-				}
-				&:nth-of-type(4) {
-					.del {
-						margin-top: 10px;
-					}		
-				}
+				}		
 			}
 		}
 	}
@@ -70,55 +67,53 @@
 
 </style>
 <template>
-	<div id="wrap-anim">
-		<div class="anim">
-			<el-card>
-				<div slot='header'>
-					<span>过渡</span>
-				</div>
-				<div>
-					<el-button @click='Fade'>{{show ? 'hide' : 'show'}}</el-button>
-					<transition name='fade'>
-						<div class="box" v-show='show'></div>
-					</transition>
-				</div>
-			</el-card>
-			<el-card>
-				<div slot='header'>
-					<span>动画</span>
-				</div>
-				<div>
-					<el-button @click='keyframes'>{{ flag ? 'hide' : 'show'}}</el-button>
-					<transition name='bounce'>
-						<div class="box" v-show='flag'></div>
-					</transition>
-				</div>
-			</el-card>
-			<el-card>
-				<div slot='header'>
-					<span>animate.css-1</span>
-				</div>
-				<div>
-					<el-button @click='animate'>{{isShow ? 'hide' : 'show'}}</el-button>
-					<transition enter-active-class='animated flipInX' leave-active-class='animated flipOutY'>
-						<div class="box" v-show='isShow'></div>
-					</transition>
-				</div>
-			</el-card>
-			<el-card>
-				<div slot='header'>
-					<span>animate.css-2</span>
-				</div>
-				<div>
-					<el-button @click='animate2'>{{countryShow ? 'hide' : 'show'}}</el-button>
-					<transition enter-active-class='animated zoomIn' leave-active-class='animated zoomOut'>
-						<div v-show='countryShow' class="del">
-							<delCountryStore></delCountryStore>
-						</div>
-					</transition>
-				</div>
-			</el-card>
-		</div>
+	<div class="anim">
+		<el-card>
+			<div slot='header'>
+				<span>过渡</span>
+			</div>
+			<div>
+				<el-button @click='Fade'>{{show ? 'hide' : 'show'}}</el-button>
+				<transition name='fade'>
+					<div class="box" v-show='show'></div>
+				</transition>
+			</div>
+		</el-card>
+		<el-card>
+			<div slot='header'>
+				<span>动画</span>
+			</div>
+			<div>
+				<el-button @click='keyframes'>{{ flag ? 'hide' : 'show'}}</el-button>
+				<transition name='bounce'>
+					<div class="box" v-show='flag'></div>
+				</transition>
+			</div>
+		</el-card>
+		<el-card>
+			<div slot='header'>
+				<span>animate.css-1</span>
+			</div>
+			<div>
+				<el-button @click='animate'>{{isShow ? 'hide' : 'show'}}</el-button>
+				<transition enter-active-class='animated flipInX' leave-active-class='animated flipOutY'>
+					<div class="box" v-show='isShow'></div>
+				</transition>
+			</div>
+		</el-card>
+		<el-card>
+			<div slot='header'>
+				<span>animate.css-2</span>
+			</div>
+			<div>
+				<el-button @click='animate2'>{{countryShow ? 'hide' : 'show'}}</el-button>
+				<transition enter-active-class='animated zoomIn' leave-active-class='animated zoomOut'>
+					<div v-show='countryShow' class="del">
+						<delCountryStore></delCountryStore>
+					</div>
+				</transition>
+			</div>
+		</el-card>
 	</div>
 </template>
 <script>
