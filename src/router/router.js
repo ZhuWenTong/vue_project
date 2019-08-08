@@ -6,32 +6,33 @@ import 'nprogress/nprogress.css'
 
 Vue.use(NProgress)
 
-// import Home from '../components/home/home.vue'
-// import User from '../components/user/user.vue'
-// import News from '../components/news/news.vue'
-// import Template from '../components/template/template'
-// import NewsDetails from '../components/news/news-details.vue'
-// import Area from '../components/news/area.vue'
-// import Reg from '../components/home/reg.vue'
-// import Login from '../components/home/login.vue'
-// import Animate from '../components/animate/animate.vue'
-// import VueStore from '../components/vuex/parent.vue'
+// import Home from '../pages/home/home.vue'
+// import User from '../pages/user/user.vue'
+// import News from '../pages/news/news.vue'
+// import Template from '../pages/template/template'
+// import NewsDetails from '../pages/news/news-details.vue'
+// import Area from '../pages/news/area.vue'
+// import Reg from '../pages/home/reg.vue'
+// import Login from '../pages/home/login.vue'
+// import Animate from '../pages/animate/animate.vue'
+// import VueStore from '../pages/vuex/parent.vue'
 
 /**
  * 路由懒加载
  */
-const Home = resolve => require(['../components/home/home.vue'], resolve)
-const User = resolve => require(['../components/user/user.vue'], resolve)
-const News = resolve => require(['../components/news/news.vue'], resolve)
-const Template = resolve => require(['../components/template/template.vue'], resolve)
-const NewsDetails = resolve => require(['../components/news/news-details.vue'], resolve)
-const Area = resolve => require(['../components/news/area.vue'], resolve)
-const Reg = resolve => require(['../components/home/reg.vue'], resolve)
-const Login = resolve => require(['../components/home/login.vue'], resolve)
-const Animate = resolve => require(['../components/animate/animate.vue'], resolve)
-const VueStore = resolve => require(['../components/vuex/parent.vue'], resolve)
-const Bug = resolve => require(['../components/bug/bug.vue'], resolve)
-const Render = resolve => require(['../components/render/render.vue'], resolve)
+const Home = resolve => require(['../pages/home/home.vue'], resolve)
+const User = resolve => require(['../pages/user/user.vue'], resolve)
+const News = resolve => require(['../pages/news/news.vue'], resolve)
+const Template = resolve => require(['../pages/template/template.vue'], resolve)
+const NewsDetails = resolve => require(['../pages/news/news-details.vue'], resolve)
+const Area = resolve => require(['../pages/news/area.vue'], resolve)
+const Reg = resolve => require(['../pages/home/reg.vue'], resolve)
+const Login = resolve => require(['../pages/home/login.vue'], resolve)
+const Animate = resolve => require(['../pages/animate/animate.vue'], resolve)
+const VueStore = resolve => require(['../pages/vuex/parent.vue'], resolve)
+const Bug = resolve => require(['../pages/bug/bug.vue'], resolve)
+const Render = resolve => require(['../pages/render/render.vue'], resolve)
+const Example = resolve => require(['../pages/example/index.vue'], resolve)
 
 
 Vue.use(VueRouter)
@@ -90,6 +91,10 @@ const router = new VueRouter({
         path: '/render',
         name: 'render',
         component: Render
+    }, {
+        path: '/example',
+        name: 'example',
+        component: Example
     }, {
         path: '*',
         redirect: '/home'

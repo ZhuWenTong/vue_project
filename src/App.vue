@@ -11,6 +11,7 @@
 					<router-link to="/vuex">VUEX</router-link>
 					<router-link :to="{name: 'bug'}">BUG</router-link>
 					<router-link :to="{name: 'render'}">Render</router-link>
+					<router-link :to="{name: 'example'}">Example</router-link>
 				</nav>
 			</div>
 			<router-view></router-view>
