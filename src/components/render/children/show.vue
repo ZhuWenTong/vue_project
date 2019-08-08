@@ -15,9 +15,9 @@ export default {
   			props: {
   				info: Object
   			}
-  		}, ['test']);
+  		}, ['test'])
   	},
-  	fn() {
+  	fn () {
   		console.log('click')
   	}
 }

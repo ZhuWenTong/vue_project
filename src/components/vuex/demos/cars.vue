@@ -1,9 +1,3 @@
-<style lang='scss', scoped>
-	@import '../../../assets/common.scss';
-	.miniborder {
-		@include flexes(row, space-between, center);
-	}
-</style>
 <template>
 	<div>
 		<el-card>
@@ -24,12 +18,10 @@
 	</div>
 </template>
 <script>
-	import {mapState, mapMutations} from 'vuex';
+	import {mapState, mapMutations} from 'vuex'
 	export default {
-		data() {
-			return {
-
-			}
+		data () {
+			return {}
 		},
 		methods: {
 			...mapMutations(['CARS_INFO']),
@@ -37,17 +29,23 @@
 				let carInfo = {
 					sign: 'BMW',
 					price: 60
-				};
+				}
 				this.CARS_INFO(carInfo)
-				//this.$store.commit('CARS_INFO', {sign: 'BMW', price: 60});
+				// this.$store.commit('CARS_INFO', {sign: 'BMW', price: 60})
 			}
 			
 		},
 		computed: {
-			...mapState(['cars']),
+			...mapState(['cars'])
 			// carsInfo() {
-			// 	return this.$store.state.cars;
+			// 	return this.$store.state.cars
 			// }
 		}
 	}
 </script>
+<style lang='scss', scoped>
+	@import '../../../assets/common.scss';
+	.miniborder {
+		@include flexes(row, space-between, center);
+	}
+</style>

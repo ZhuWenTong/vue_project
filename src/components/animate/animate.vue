@@ -1,3 +1,85 @@
+<template>
+	<div class="anim">
+		<el-card>
+			<div slot='header'>
+				<span>过渡</span>
+			</div>
+			<div>
+				<el-button @click='Fade'>{{show ? 'hide' : 'show'}}</el-button>
+				<transition name='fade'>
+					<div class="box" v-show='show'></div>
+				</transition>
+			</div>
+		</el-card>
+		<el-card>
+			<div slot='header'>
+				<span>动画</span>
+			</div>
+			<div>
+				<el-button @click='keyframes'>{{ flag ? 'hide' : 'show'}}</el-button>
+				<transition name='bounce'>
+					<div class="box" v-show='flag'></div>
+				</transition>
+			</div>
+		</el-card>
+		<el-card>
+			<div slot='header'>
+				<span>animate.css-1</span>
+			</div>
+			<div>
+				<el-button @click='animate'>{{isShow ? 'hide' : 'show'}}</el-button>
+				<transition enter-active-class='animated flipInX' leave-active-class='animated flipOutY'>
+					<div class="box" v-show='isShow'></div>
+				</transition>
+			</div>
+		</el-card>
+		<el-card>
+			<div slot='header'>
+				<span>animate.css-2</span>
+			</div>
+			<div>
+				<el-button @click='animate2'>{{countryShow ? 'hide' : 'show'}}</el-button>
+				<transition enter-active-class='animated zoomIn' leave-active-class='animated zoomOut'>
+					<div v-show='countryShow' class="del">
+						<delCountryStore></delCountryStore>
+					</div>
+				</transition>
+			</div>
+		</el-card>
+	</div>
+</template>
+<script>
+	import delCountryStore from '../vuex/children/delCountryStore.vue'
+
+	export default {
+		data () {
+			return {
+				show: true,
+				flag: true,
+				isShow: true,
+				countryShow: true
+			}
+		},
+		methods: {
+			Fade () {
+				this.show = !this.show
+			},
+			keyframes () {
+				this.flag = !this.flag
+			},
+			animate () {
+				this.isShow = !this.isShow
+			},
+			animate2 () {
+				this.countryShow = !this.countryShow
+			}
+		},
+		computed: {},
+		components: {
+			delCountryStore
+		}
+	}
+</script>
 <style lang='scss' scoped>
 	@import '../../assets/common';
 	.anim {
@@ -66,87 +148,3 @@
 	}
 
 </style>
-<template>
-	<div class="anim">
-		<el-card>
-			<div slot='header'>
-				<span>过渡</span>
-			</div>
-			<div>
-				<el-button @click='Fade'>{{show ? 'hide' : 'show'}}</el-button>
-				<transition name='fade'>
-					<div class="box" v-show='show'></div>
-				</transition>
-			</div>
-		</el-card>
-		<el-card>
-			<div slot='header'>
-				<span>动画</span>
-			</div>
-			<div>
-				<el-button @click='keyframes'>{{ flag ? 'hide' : 'show'}}</el-button>
-				<transition name='bounce'>
-					<div class="box" v-show='flag'></div>
-				</transition>
-			</div>
-		</el-card>
-		<el-card>
-			<div slot='header'>
-				<span>animate.css-1</span>
-			</div>
-			<div>
-				<el-button @click='animate'>{{isShow ? 'hide' : 'show'}}</el-button>
-				<transition enter-active-class='animated flipInX' leave-active-class='animated flipOutY'>
-					<div class="box" v-show='isShow'></div>
-				</transition>
-			</div>
-		</el-card>
-		<el-card>
-			<div slot='header'>
-				<span>animate.css-2</span>
-			</div>
-			<div>
-				<el-button @click='animate2'>{{countryShow ? 'hide' : 'show'}}</el-button>
-				<transition enter-active-class='animated zoomIn' leave-active-class='animated zoomOut'>
-					<div v-show='countryShow' class="del">
-						<delCountryStore></delCountryStore>
-					</div>
-				</transition>
-			</div>
-		</el-card>
-	</div>
-</template>
-<script>
-	import delCountryStore from '../vuex/children/delCountryStore.vue';
-
-	export default {
-		data() {
-			return {
-				show: true,
-				flag: true,
-				isShow: true,
-				countryShow: true
-			}
-		},
-		methods: {
-			Fade() {
-				this.show = !this.show;
-			},
-			keyframes() {
-				this.flag = !this.flag;
-			},
-			animate() {
-				this.isShow = !this.isShow;
-			},
-			animate2() {
-				this.countryShow = !this.countryShow;
-			}
-		},
-		computed: {
-			
-		},
-		components: {
-			delCountryStore
-		}
-	}
-</script>

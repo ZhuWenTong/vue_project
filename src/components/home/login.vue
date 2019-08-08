@@ -5,13 +5,13 @@
 </template>
 <script>
 	export default {
-		data() {
+		data () {
 			return {
 				p: ''
 			}
 		},
 		mounted() {
-			this.p = this.$route.params.p;
+			this.p = this.$route.params.p
 		},
 		methods: {
 

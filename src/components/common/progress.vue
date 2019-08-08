@@ -4,23 +4,21 @@
 <script>
 	export default {
 		props: ['percentage', 'progressShow'],
+		data () {
+			return {}
+		},
 		computed: {
-			percentageNum() {
-				return this.percentage;
+			percentageNum () {
+				return this.percentage
 			}
 		},
-		mounted() {
+		mounted () {
 			let timer = setInterval(() => {
-				this.$emit('getPercentage', this.percentageNum);
-				if(this.percentageNum >= 99) {
-					clearInterval(timer);
+				this.$emit('getPercentage', this.percentageNum)
+				if (this.percentageNum >= 99) {
+					clearInterval(timer)
 				}
 			}, 10)
-		},
-		data() {
-			return {
-
-			}
 		}
 	}
 </script>

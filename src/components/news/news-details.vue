@@ -15,7 +15,7 @@
 </template>
 <script>
 	export default {
-		data() {
+		data () {
 			return {
 				con: '',
 				items: [{
@@ -28,10 +28,10 @@
 				activeDate: ''
 			}
 		},
-		mounted() {
-			let id = this.$route.params.id;
+		mounted () {
+			let id = this.$route.params.id
 			// console.log(id)
-			this.con = `这是新闻${id}`;
+			this.con = `这是新闻${id}`
 			
 		},
 		methods: {
@@ -39,7 +39,7 @@
 			// 	this.$router.push({name:'area', params: {aid: aid}})
 			// }
 			handleTo (aid) {
-				this.activeDate = aid;
+				this.activeDate = aid
 				this.$router.push({name:'area', params: {aid: aid}})
 			},
 			back () {
@@ -48,7 +48,7 @@
 				let obj = {
 					id: '1'
 				}
-				params[params['callbackName']](obj)
+				params['callbackName'] && params[params['callbackName']](obj)
 				this.$router.back()
 			}
 		}

@@ -1,13 +1,3 @@
-<style lang='scss' scoped>
-	@import '../../assets/common.scss';
-	.bug {
-		width: 1600px;
-		margin: 0 auto;
-		.miniborder {
-			@include borders(100%);
-		}
-	}
-</style>
 <template>
 	<div class="bug">
 		<el-card shadow="hover">
@@ -36,15 +26,13 @@
 <script>
 	export default {
 		name: 'bug',
-		data() {
+		data () {
 			return {
 				obj: {}
 			}
 		},
-		methods: {
-
-		},
-		mounted() {
+		methods: {},
+		mounted () {
 			this.obj = {
 				name: 'zhangsan',
 				content: "<p v-if='obj.like'>{{obj.like.sport}}</p>",
@@ -59,6 +47,16 @@
 		}
 	}
 </script>
+<style lang='scss' scoped>
+	@import '../../assets/common.scss';
+	.bug {
+		width: 1600px;
+		margin: 0 auto;
+		.miniborder {
+			@include borders(100%);
+		}
+	}
+</style>
 <style lang="scss" scoped>
 	.el-card {
 		float: left;

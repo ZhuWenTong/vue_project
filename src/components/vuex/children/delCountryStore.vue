@@ -1,8 +1,3 @@
-<style lang='scss' scoped>
-	p {
-		color: #f56c6c;
-	}
-</style>
 <template>
 	<div>
 		<p v-show='countries.length == 0'>这里是公共组件: store中无countries数据</p>
@@ -14,18 +9,16 @@
 	</div>
 </template>
 <script>
-	import { mapState, mapActions } from 'vuex';
+	import { mapState, mapActions } from 'vuex'
 	export default {
-		data() {
-			return {
-
-			}
+		data () {
+			return {}
 		},
 		methods: {
 			...mapActions(['COUNTRIES']),
-			delCountry(id) {
-				//console.log(id);
-				this.COUNTRIES({id, type:'del'});
+			delCountry (id) {
+				// console.log(id)
+				this.COUNTRIES({id, type:'del'})
 			}
 
 		},
@@ -34,3 +27,8 @@
 		}
 	}
 </script>
+<style lang='scss' scoped>
+	p {
+		color: #f56c6c;
+	}
+</style>

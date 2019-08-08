@@ -15,9 +15,9 @@
 	</div>
 </template>
 <script>
-	import Show from './children/show.vue';
+	import Show from './children/show.vue'
 	export default {
-		data() {
+		data () {
 			return {
 				peoples: [{
 					name: 'zhangsan',
@@ -31,12 +31,10 @@
 				}
 			}
 		},
-		mounted() {
+		mounted () {
 			console.log(this.peoples)
 		},
-		methods: {
-
-		},
+		methods: {},
 		components: {
 			Show
 		}

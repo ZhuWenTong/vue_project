@@ -7,18 +7,18 @@
             currentPage: Number,
             allNum: Number
         },
-        data() {
+        data () {
             return {
                 pageSize: 20
             }
         },
-        mounted() {
+        mounted () {
             
         },
         methods: {
-            handleCurrentChange(val) {
-                console.log(`当前页: ${val}`);
-                this.$emit('currentPage', val);
+            handleCurrentChange (val) {
+                console.log(`当前页: ${val}`)
+                this.$emit('currentPage', val)
             }
         }
     }

@@ -1,27 +1,3 @@
-<style scoped lang='scss' scoped>
-	@import '../../assets/common.scss';
-	#wrap-store {
-		width: 100%;
-		background: url('../../assets/img/bg.jpg') no-repeat center 0;
-		background-color: #0c0c0e;
-		.vuex, .store {
-			width: 1600px;
-			margin: 0 auto;
-			@include flexes(row, flex-start, center);
-			flex-wrap: wrap;
-			@include borders();
-			.el-card {
-				margin-right: 15px;
-			}
-			.el-card:nth-of-type(odd) {
-				margin-left: 15px;
-			}
-		}
-		.el-input {
-			width: 180px;
-		}
-	}
-</style>
 <template>
 	<div id="wrap-store">
 		<div class="store">
@@ -124,18 +100,18 @@
 	</div>
 </template>
 <script>
-	import Child from './child.vue';
-	import Info from './info.vue';
-	import Animals from './demos/animals.vue';
-	import Cars from './demos/cars.vue';
-	import City from './demos/city.vue';
-	import Country from './demos/country.vue';
-	import delCountryStore from './children/delCountryStore.vue';
+	import Child from './child.vue'
+	import Info from './info.vue'
+	import Animals from './demos/animals.vue'
+	import Cars from './demos/cars.vue'
+	import City from './demos/city.vue'
+	import Country from './demos/country.vue'
+	import delCountryStore from './children/delCountryStore.vue'
 
-	import {mapState, mapActions} from 'vuex';
+	import {mapState, mapActions} from 'vuex'
 
 	export default {
-		data() {
+		data () {
 			return {
 				canAdd: true,
 				game: ''
@@ -143,60 +119,60 @@
 		},
 		methods: {
 			...mapActions('games', ['add_games']), // 映射modules中actions的方法
-			countMin() {
-				if(this.$store.state.count == 0) {
-					return;
+			countMin () {
+				if (this.$store.state.count === 0) {
+					return
 				}
-				//this.$store.commit('MIN_COUNT', 1);
-				this.$store.dispatch('MIN_COUNT', 1);
+				// this.$store.commit('MIN_COUNT', 1)
+				this.$store.dispatch('MIN_COUNT', 1)
 			},
-			intGame(val) {
-				this.canAdd = true;
+			intGame (val) {
+				this.canAdd = true
 			},
-			addGames() {
-				if(this.game) {
+			addGames () {
+				if (this.game) {
 					this.games.map(i => {
-						if(i.name == this.game) {
-							this.canAdd = false;
-							return;
+						if(i.name === this.game) {
+							this.canAdd = false
+							return
 						}
 					})
-					if(this.canAdd) {
+					if (this.canAdd) {
 						let obj = {
 							name: this.game,
 							id: this.game
 						}
-						this.add_games(obj); //调用add_games
+						this.add_games(obj) // 调用add_games
 					} else {
 						// this.$message({
 						// 	message: '不可重复添加',
 						// 	type: 'warning'
-						// });
+						// })
 						this.$message.warning('不可重复添加！')
 					}
 				}
 			}
 		},
-		mounted() {
+		mounted () {
 			console.log(this.$store.state)
 		},
 		// computed: {
 		// 	getCount() {
-		// 		//return this.$store.state.count;
-		// 		return this.$store.getters.MIN_COUNT;
+		// 		//return this.$store.state.count
+		// 		return this.$store.getters.MIN_COUNT
 
 		// 	},
 		// 	userInfo() {
-		// 		return this.$store.state.userInfo;
+		// 		return this.$store.state.userInfo
 		// 	},
 		// 	animals() {
-		// 		return this.$store.state.animals;
+		// 		return this.$store.state.animals
 		// 	},
 		// 	carsInfo() {
-		// 		return this.$store.state.cars;
+		// 		return this.$store.state.cars
 		// 	},
 		// 	cityInfo() {
-		// 		return this.$store.state.cities;
+		// 		return this.$store.state.cities
 		// 	}
 		// },
 		// 使用mapState辅助函数
@@ -207,18 +183,18 @@
 		// 	carsInfo: state => state.cars,
 		// 	cityInfo: state => state.cities
 		// }),
-		//computed属性名称与state子节点名称相同 可以传字符串数组
+		// computed属性名称与state子节点名称相同 可以传字符串数组
 		computed: {
-			...mapState(['userInfo', 'animals']), //映射state中的对象
+			...mapState(['userInfo', 'animals']), // 映射state中的对象
 			...mapState('games', ['games']),
-			getCount() {
-				return this.$store.state.count;
+			getCount () {
+				return this.$store.state.count
 			},
-			carsInfo() {
-				return this.$store.state.cars;
+			carsInfo () {
+				return this.$store.state.cars
 			},
-			cityInfo() {
-				return this.$store.state.cities;
+			cityInfo () {
+				return this.$store.state.cities
 			}
 		},
 		components: {
@@ -232,3 +208,27 @@
 		}
 	}
 </script>
+<style scoped lang='scss' scoped>
+	@import '../../assets/common.scss';
+	#wrap-store {
+		width: 100%;
+		background: url('../../assets/img/bg.jpg') no-repeat center 0;
+		background-color: #0c0c0e;
+		.vuex, .store {
+			width: 1600px;
+			margin: 0 auto;
+			@include flexes(row, flex-start, center);
+			flex-wrap: wrap;
+			@include borders();
+			.el-card {
+				margin-right: 15px;
+			}
+			.el-card:nth-of-type(odd) {
+				margin-left: 15px;
+			}
+		}
+		.el-input {
+			width: 180px;
+		}
+	}
+</style>

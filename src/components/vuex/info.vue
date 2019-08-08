@@ -1,9 +1,3 @@
-<style scoped lang="scss">
-	@import '../../assets/common.scss';
-	.miniborder {
-		@include flexes(row, space-between, center);
-	}
-</style>
 <template>
 	<div>
 		<el-card>
@@ -22,22 +16,26 @@
 </template>
 <script>
 	export default {
-		data() {
-			return {
-
-			}
+		data () {
+			return {}
 		},
 		methods: {
-			changeInfo() {
-				//this.$store.commit('USER_INFO', {name: 'lisi', age: 22}) //不使用actions 使用 mutations
-				//this.$store.state.userInfo.name = 'lisi';
-				this.$store.dispatch('USER_INFO', {name: 'lisi', age: 22}); //使用actions
+			changeInfo () {
+				// this.$store.commit('USER_INFO', {name: 'lisi', age: 22}) // 不使用actions 使用 mutations
+				// this.$store.state.userInfo.name = 'lisi'
+				this.$store.dispatch('USER_INFO', {name: 'lisi', age: 22})	// 使用actions
 			}
 		},
 		computed: {
-			userInfo() {
-				return this.$store.state.userInfo;
+			userInfo () {
+				return this.$store.state.userInfo
 			}
 		}
 	}
 </script>
+<style scoped lang="scss">
+	@import '../../assets/common.scss';
+	.miniborder {
+		@include flexes(row, space-between, center);
+	}
+</style>

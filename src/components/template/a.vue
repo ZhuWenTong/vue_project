@@ -6,14 +6,14 @@
 </template>
 <script>
 	export default {
-		data() {
+		data () {
 			return {
 				num: 0
 			}
 		},
 		methods: {
-			add() {
-				this.num += 1;
+			add () {
+				this.num += 1
 			}
 		}
 	}

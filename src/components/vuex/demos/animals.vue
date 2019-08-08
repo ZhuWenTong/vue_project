@@ -17,17 +17,13 @@
 </template>
 <script>
 	export default {
-		data() {
-			return {
-
-			}
+		data () {
+			return {}
 		},
-		methods: {
-
-		},
+		methods: {},
 		computed: {
-			animals() {
-				return this.$store.state.animals;
+			animals () {
+				return this.$store.state.animals
 			}
 		}
 	}

@@ -5,15 +5,15 @@
 </template>
 <script>
 	export default {
-		data() {
+		data () {
 			return {
 				p: ''
 			}
 		},
-		mounted() {
-			let p = this.$route.params.p;
+		mounted () {
+			let p = this.$route.params.p
 			console.log(p)
-			this.p = p;
+			this.p = p
 		},
 		methods: {
 

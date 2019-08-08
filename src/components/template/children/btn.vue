@@ -5,16 +5,15 @@
 </template>
 <script>
     export default {
-        data() {
+        data () {
             return {
                 num: 0
             }
         },
         methods: {
-            add() {
-                this.num++;
+            add () {
+                this.num++
             }
         }
     }
 </script>
-

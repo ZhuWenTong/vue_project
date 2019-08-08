@@ -1,11 +1,3 @@
-<style scoped>
-	.el-input {
-		width: 200px;
-	}
-	.el-card {
-		width: 400px;
-	}
-</style>
 <template>
 	<el-card>
 		<div slot='header'>son组件</div>
@@ -19,16 +11,24 @@
 <script>
 	export default {
 		props: ['title'],
-		data() {
+		data () {
 			return {
 				sonMsg: ''
 			}
 		},
 		methods: {
-			sendMsg() {
-				//传值给父组件
-				this.$emit('fromSon', this.sonMsg);
+			sendMsg () {
+				// 传值给父组件
+				this.$emit('fromSon', this.sonMsg)
 			}
 		}
 	}
 </script>
+<style scoped>
+	.el-input {
+		width: 200px;
+	}
+	.el-card {
+		width: 400px;
+	}
+</style>

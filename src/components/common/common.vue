@@ -11,23 +11,19 @@
         },
         computed: {
             changeNum: {
-                get() {
-                    return this.num;
+                get () {
+                    return this.num
                 },
-                set() {
-
-                }
+                set () {}
             }
         },
         data() {
-            return {
-
-            }
+            return {}
         },
         methods: {
-            rateChange(val) {
-                console.log(val, this.name);
-                this.$emit('getrate', {val, name:this.name});
+            rateChange (val) {
+                console.log(val, this.name)
+                this.$emit('getrate', {val, name:this.name})
             }
         }
     }
