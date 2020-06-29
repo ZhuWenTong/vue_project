@@ -18,7 +18,7 @@ $minisize: 12px;
 $size: 14px;
 $bar-height: 44px;
 $span-height: 30px;
-$li-height: 40px;
+$li-height: 50px;
 $input-height: 60px;
 
 body {
@@ -88,6 +88,6 @@ html, body {
 }
 
 body {
-    padding-top: 40px;
+    padding-top: $li-height;
     box-sizing: border-box;
 }

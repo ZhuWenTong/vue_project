@@ -33,7 +33,7 @@ const VueStore = resolve => require(['../pages/vuex/parent.vue'], resolve)
 const Bug = resolve => require(['../pages/bug/bug.vue'], resolve)
 const Render = resolve => require(['../pages/render/render.vue'], resolve)
 const Example = resolve => require(['../pages/example/index.vue'], resolve)
-
+const Table = resolve => require(['../pages/Table/index.vue'], resolve)
 
 Vue.use(VueRouter)
 const router = new VueRouter({
@@ -95,6 +95,10 @@ const router = new VueRouter({
         path: '/example',
         name: 'example',
         component: Example
+    }, {
+        path: '/table',
+        name: 'table',
+        component: Table
     }, {
         path: '*',
         redirect: '/home'
