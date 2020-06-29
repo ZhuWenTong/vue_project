@@ -11,6 +11,7 @@ import router from './router/router'
 import store from './store/index'
 
 import FixedEltableHeader from './directives/fixed-eltable-header'
+import TransferDom from './directives/transfer-dom'
 
 Vue.use(Collapse)
 Vue.use(Button)
@@ -32,6 +33,7 @@ Vue.directive('pColor', {
 	}
 })
 Vue.directive('fixed-eltable-header', FixedEltableHeader)
+Vue.directive('transfer-dom', TransferDom)
 
 new Vue({
     el: '#app',

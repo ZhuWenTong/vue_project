@@ -34,6 +34,7 @@ const Bug = resolve => require(['../pages/bug/bug.vue'], resolve)
 const Render = resolve => require(['../pages/render/render.vue'], resolve)
 const Example = resolve => require(['../pages/example/index.vue'], resolve)
 const Table = resolve => require(['../pages/Table/index.vue'], resolve)
+const TransferDom = resolve => require(['../pages/TransferDom/index.vue'], resolve)
 
 Vue.use(VueRouter)
 const router = new VueRouter({
@@ -99,6 +100,10 @@ const router = new VueRouter({
         path: '/table',
         name: 'table',
         component: Table
+    }, {
+        path: '/transferDom',
+        name: 'transferDom',
+        component: TransferDom
     }, {
         path: '*',
         redirect: '/home'

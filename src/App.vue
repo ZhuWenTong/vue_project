@@ -13,6 +13,7 @@
 					<router-link :to="{name: 'render'}">Render</router-link>
 					<router-link :to="{name: 'example'}">Example</router-link>
 					<router-link to="/table">Table</router-link>
+					<router-link to="/transferDom">TransferDom</router-link>
 				</nav>
 			</div>
 			<router-view></router-view>
