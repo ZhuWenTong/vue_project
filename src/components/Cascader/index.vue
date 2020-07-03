@@ -108,11 +108,11 @@ export default {
             this.targetNode = null
         },
         change (item) {
-            console.log(item)
             let { label, value, children, path } = this.cascaderMap
             if (!item[children] || !item[children].length) {
                 this.visible = false
             }
+            this.targetNode = null
             this.cascaderName = item[label]
             this.$emit('input', item[value])
             this.path = item[path].substring(1).split('.').map(i => parseFloat(i))
