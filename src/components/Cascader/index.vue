@@ -116,6 +116,7 @@ export default {
             this.isFilter = false
             this.$emit('change', item)
         },
+        // 点击组件之外 自动关闭
         closeBox (e) {
             let { label } = this.cascaderMap
             let { qxCascader, cascaderFilter } = this.$refs
@@ -133,22 +134,23 @@ export default {
         },
         // 递归找到 部门id对应的对象
         findNode (data) {
-            let { label, value } = this.cascaderMap
+            let { label, value, children } = this.cascaderMap
             for (let i = 0, len = data.length; i < len; i++) {
                 if (data[i][value] === this.cascaderValue) {
                     this.targetNode = data[i]
                     this.cascaderName = data[i][label]
                     this.path = data[i].depPath.substring(1).split('.').map(i => parseFloat(i))
-                } else if (data[i].children && data[i].children.length) {
-                    this.findNode(data[i].children)
+                } else if (data[i][children] && data[i][children].length) {
+                    this.findNode(data[i][children])
                 }
             }
         },
         handlerSelectOptions (data) {
+            let { children } = this.cascaderMap
             data.forEach(i => {
                 this.selectOptions.push(i)
-                if (i.children && i.children.length) {
-                    this.handlerSelectOptions(i.children)
+                if (i[children] && i[children].length) {
+                    this.handlerSelectOptions(i[children])
                 }
             })
         }
