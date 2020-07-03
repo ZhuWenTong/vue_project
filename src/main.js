@@ -5,7 +5,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 //import 'vue2-animate/dist/vue2-animate.min.css'
 import './assets/animate.min.css'
 
-import {Collapse, Button, Rate, Pagination, Progress, Input, Card, Notification, Message, Table, TableColumn, Row, Col, Loading} from 'element-ui'
+import elementUI from './static/elementUI'
 
 import router from './router/router'
 import store from './store/index'
@@ -13,21 +13,7 @@ import store from './store/index'
 import FixedEltableHeader from './directives/fixed-eltable-header'
 import TransferDom from './directives/transfer-dom'
 
-Vue.use(Collapse)
-Vue.use(Button)
-Vue.use(Rate)
-Vue.use(Pagination)
-Vue.use(Progress)
-Vue.use(Input)
-Vue.use(Card)
-Vue.use(Table)
-Vue.use(TableColumn)
-Vue.use(Row)
-Vue.use(Col)
-Vue.use(Loading)
-
-Vue.prototype.$notify = Notification
-Vue.prototype.$message = Message
+Vue.use(elementUI)
 
 //全局自定义指令
 Vue.directive('pColor', {
