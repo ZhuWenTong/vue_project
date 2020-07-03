@@ -5,7 +5,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 //import 'vue2-animate/dist/vue2-animate.min.css'
 import './assets/animate.min.css'
 
-import {Collapse, Button, Rate, Pagination, Progress, Input, Card, Notification, Message, Table, TableColumn} from 'element-ui'
+import {Collapse, Button, Rate, Pagination, Progress, Input, Card, Notification, Message, Table, TableColumn, Row, Col, Loading} from 'element-ui'
 
 import router from './router/router'
 import store from './store/index'
@@ -22,6 +22,9 @@ Vue.use(Input)
 Vue.use(Card)
 Vue.use(Table)
 Vue.use(TableColumn)
+Vue.use(Row)
+Vue.use(Col)
+Vue.use(Loading)
 
 Vue.prototype.$notify = Notification
 Vue.prototype.$message = Message

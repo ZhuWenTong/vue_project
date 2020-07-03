@@ -37,7 +37,10 @@ export default {
             default: true
         },
         loading: Boolean,
-        value: [String, Number],
+        value: {
+            type: [String, Number],
+            default: true
+        },
         valueMap: { // 映射关系
             type: Object,
             default () {
@@ -175,6 +178,7 @@ export default {
     },
     created () {
         Object.assign(this.cascaderMap, this.valueMap)
+        this.init()
     },
     mounted () {
         this.$nextTick(function() {

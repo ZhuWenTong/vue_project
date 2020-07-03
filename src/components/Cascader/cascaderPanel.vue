@@ -88,7 +88,6 @@ export default {
     }
 }
 .cascader-panel {
-    height: 300px;
     .panel-main {
         @include scrollbar;
         height: 200px;
