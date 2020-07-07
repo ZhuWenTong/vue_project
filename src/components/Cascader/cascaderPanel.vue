@@ -2,12 +2,26 @@
     <div class="cascader-panel">
         <div class="panel-main">
             <div v-for="item in data" :key="item[valueMap.value]" class="panel-parent">
-                <div @click="handleClick(item)" class="panel-content" :class="{'active': item[valueMap.value] === activeId}">
+                <div
+                    @click="handleClick(item)"
+                    @mouseenter="handleEnter(item)"
+                    class="panel-content"
+                    :class="{'active': item[valueMap.value] === activeId || item[valueMap.value] === hoverId}">
                     <span>{{item[valueMap.label]}}</span>
                     <i v-if="item[valueMap.children] && item[valueMap.children].length" class="el-icon-arrow-right"></i>
                 </div>
-                <div v-if="item[valueMap.children] && item[valueMap.children].length && item[valueMap.value] === activeId" class="panel-son">
-                    <cascader-panel :data="item[valueMap.children]" @change="change" :path="currentPath" :value-map="valueMap" />
+                <div
+                    v-if="item[valueMap.children] &&
+                        item[valueMap.children].length &&
+                        showChildCascader &&
+                        (item[valueMap.value] === activeId || item[valueMap.value] === hoverId)"
+                    class="panel-son">
+                    <cascader-panel
+                        :data="item[valueMap.children]"
+                        @change="change"
+                        :path="currentPath"
+                        :value-map="valueMap"
+                        :expand-trigger="expandTrigger" />
                 </div>
             </div>
         </div>
@@ -24,13 +38,16 @@ export default {
                 return []
             }
         },
-        path: Array,
-        valueMap: Object
+        path: [Array, String],
+        valueMap: Object,
+        expandTrigger: String
     },
     data () {
         return {
             activeId: '',
-            currentPath: ''
+            currentPath: '',
+            hoverId: '',
+            showChildCascader: true
         }
     },
     methods: {
@@ -46,9 +63,30 @@ export default {
         handleClick (item) {
             this.activeId = item[this.valueMap.value]
             this.$emit('change', item)
+            if (this.expandTrigger === 'hover') {
+                let dom = this.$parent
+                this.findCascaderParent(dom)
+            }
+        },
+        handleEnter (item) {
+            if (this.expandTrigger !== 'hover') return
+            this.hoverId = item[this.valueMap.value]
+            if (item.children && item.children.length) {
+                this.showChildCascader = true
+            } else {
+                this.showChildCascader = false
+            }
         },
         change (data) {
             this.$emit('change', data)
+        },
+        findCascaderParent (dom) {
+            if (dom.$el.className === 'qx-cascader') {
+                dom.visible = false
+            } else {
+                let p = dom.$parent
+                this.findCascaderParent(p)
+            }
         }
     },
     components: {

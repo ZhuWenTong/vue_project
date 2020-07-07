@@ -18,7 +18,16 @@
                 </el-card>
             </el-col>
             <el-col :span="16">
+                
+            </el-col>
+        </el-row>
+        <el-row>
+            <el-col :span="12">
                 <tong-cascader :options="cascaderOptions" :value-map="valueMap" v-model="cascaderValue" :loading="cascaderLoading" />
+                <div style="height: 300px;"></div>
+            </el-col>
+            <el-col :span="12">
+                <tong-cascader :options="cascaderOptions" :value-map="valueMap" v-model="cascaderValue1" :loading="cascaderLoading" expandTrigger="click" />
                 <div style="height: 300px;"></div>
             </el-col>
         </el-row>
@@ -39,6 +48,7 @@ export default {
                 path: 'path'
             },
             cascaderValue: '',
+            cascaderValue1: '',
             cascaderLoading: false
         }
     },

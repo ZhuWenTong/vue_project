@@ -10,7 +10,7 @@
         <div class="container"
             v-loading="panelLoading"
             v-show="visible">
-            <cascader-panel :data="options" @change="change" :path="path" :value-map="cascaderMap" />
+            <cascader-panel :data="options" @change="change" :path="path" :value-map="cascaderMap" :expand-trigger="expandTrigger" />
         </div>
         <div class="filters" v-show="isFilter">
             <cascader-filter :data="selectOptions" :filter-key="cascaderName" :value-map="cascaderMap" @change="change" ref="cascaderFilter" />
@@ -39,7 +39,7 @@ export default {
         loading: Boolean,
         value: {
             type: [String, Number],
-            default: true
+            required: true
         },
         valueMap: { // 映射关系
             type: Object,
@@ -51,6 +51,10 @@ export default {
                     path: 'depPath'
                 }
             }
+        },
+        expandTrigger: {
+            type: String,
+            default: 'hover'
         }
     },
     data () {
@@ -119,7 +123,6 @@ export default {
             this.isFilter = false
             this.$emit('change', item)
         },
-        // 点击组件之外 自动关闭
         closeBox (e) {
             let { label } = this.cascaderMap
             let { qxCascader, cascaderFilter } = this.$refs
